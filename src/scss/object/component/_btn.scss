@@ -1,0 +1,24 @@
+@charset "utf8";
+
+.c-btn {
+	.btn {
+		input[type="submit"] {
+			font-size: 18px;
+			width: 150px;
+			height: 40px;
+			background: linear-gradient(90deg, rgb(80 167 186 / 95%), rgb(103 147 174 / 95%));
+			color: #fff;
+			border: 0;
+		}
+	}	
+}
+
+@media screen and (max-width: 1024px) {
+	.c-btn {
+		.btn {
+			input[type="submit"] {
+				font-size: 16px;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": null,
+    "no-descending-specificity" : null,
+    "number-leading-zero" : "never",
+    "selector-pseudo-element-colon-notation" : "single",
+    "declaration-empty-line-before" : null,
+    "font-family-no-missing-generic-family-keyword" : null,
+    "no-duplicate-selectors" : null
+  }
+}
