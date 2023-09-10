@@ -12,7 +12,7 @@ export const notify = (message, status) => {
       pauseOnHover: true,
       draggable: true,
       progress: 0,
-      theme: "light",
+      theme: "dark",
     });
   }
 };
