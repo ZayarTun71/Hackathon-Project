@@ -14,7 +14,7 @@
 
 		img {
 			width: 100%;
-			height: 100%;
+			height: auto;
 		}
 	}
 
@@ -122,6 +122,12 @@
 
 @media screen and (max-width: 800px) {
 	.form-area {
+		.img-box {
+			img {
+				height: 100%;
+			}
+		}
+
 		.txt-box {
 			&__inner {
 				max-width: 75%;
