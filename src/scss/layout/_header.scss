@@ -8,6 +8,7 @@ $green: #50a7ba;
 .header {
 	background-color: $white;
 	box-shadow: 0 2px 3px rgb(68 68 68 / 60%);
+	z-index: 999;
 
 	&__inner {
 		display: flex;
@@ -167,6 +168,24 @@ $green: #50a7ba;
 		#nav {
 			display: none;
 		}
+	}
+}
+
+.scr {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	animation: nav-slide .35s ease-in-out;
+}
+
+@keyframes nav-slide {
+	from {
+		transform: translateY(-100%);
+	}
+
+	to {
+		transform: translateY(0);
 	}
 }
 
