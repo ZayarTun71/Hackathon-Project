@@ -1,5 +1,4 @@
-// import '../scss/style.scss'
-// import jQuery from 'jquery'
+// import jQuery from 'jquery';
 
 // const $ = jQuery;
 // window.jQuery = jQuery;
@@ -17,16 +16,6 @@
 // 	}
 // });
 
-// // win8.1 ie11 mousewheel scroll bug
-// if (navigator.userAgent.match(/Trident\/7\./)) {
-// 	$('body').on('mousewheel', function () {
-// 		event.preventDefault();
-// 		var wheelDelta = event.wheelDelta;
-// 		var currentScrollPosition = window.pageYOffset;
-// 		window.scrollTo(0, currentScrollPosition - wheelDelta);
-// 	});
-// }
-
 // $(window).on({
 //   load: function () {
 //     // footerScr();
@@ -41,4 +30,15 @@
 
 // $('a[href^="#"]').click(function (e) {
 // 	e.preventDefault();
+// });
+
+// $('.p-slider__area--mainvisual').slick({
+//   fade: true,
+//   autoplay: true,
+//   pauseOnHover: false,
+//   autoplaySpeed: 3000,
+//   speed: 800,
+//   arrows: true,
+//   dots: true,
+//   appendDots: $('.p-mainvisual__dots')
 // });

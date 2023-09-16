@@ -7,4 +7,7 @@ export default defineConfig({
   server: {
     port: 7071,
   },
+  optimizeDeps: {
+    include: ["slick-carousel","jquery"],
+  },
 });

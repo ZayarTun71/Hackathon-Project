@@ -37,31 +37,42 @@
 				<div class="header__inner">
 					<div class="logo">
 						<!-- <a href="/"><img src="../img/header/logo.png" alt=""></a> -->
-						<a href="/"></a>
+						<a href="/" class="logo-link"></a>
 					</div>
 					<div class="nav-menu">
 						<ul class="nav-menu__list">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Information</a></li>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Product</a></li>
+							<li><a href="#" class="nav-link">Home</a></li>
+							<li><a href="#" class="nav-link">About</a></li>
+							<li><a href="#" class="nav-link">Information</a></li>
+							<li><a href="#" class="nav-link">Contact Us</a></li>
+							<li><a href="#" class="nav-link">Product</a></li>
 						</ul>
-						<ul class="nav-menu__icon">
-							<li><a href="#" class="login"><img src="../img/header/icon_user.png" alt=""></a></li>
-						</ul>
+						<!-- After Login Show -->
+						<div class="nav-menu__icon">
+							<input type="checkbox" id="nav-drp">
+							<label for="nav-drp" class="nav-drp-label">
+								<img src="../img/header/icon_user.png" alt="">
+							</label>
+			
+							<ul class="drp-menu">
+								<li><a href="#" class="drp-link">My Account</a></li>
+								<li><a href="#" class="drp-link">Logout</a></li>
+							</ul>
+						</div>
+						<!-- After Login Show -->
 					</div>
-
+			
 					<div id="nav">
 						<input type="checkbox" />
 						<span></span><span></span><span></span>
 						<ul id="menu">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Information</a></li>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Login</a></li>
-							<li><a href="#">Register</a></li>
+							<li><a href="#" class="nav-link">Home</a></li>
+							<li><a href="#" class="nav-link">About</a></li>
+							<li><a href="#" class="nav-link">Information</a></li>
+							<li><a href="#" class="nav-link">Contact Us</a></li>
+							<li><a href="#" class="nav-link">Login</a></li>
+							<li><a href="#" class="nav-link">Logout</a></li>
+							<li><a href="#" class="nav-link">Register</a></li>
 						</ul>
 					</div>
 				</div>
@@ -118,7 +129,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 
 </body>

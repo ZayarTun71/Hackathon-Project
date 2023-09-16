@@ -1,24 +1,27 @@
 @charset "utf-8";
 
 /*  normalize.css */
-// @import "~normalize.css/normalize.css";
+// @use "~normalize.css/normalize.css";
 
 /* ==========================================================================
   Foundation
 ========================================================================== */
-@import 'foundation/base';
-@import 'foundation/fonts';
-@import 'foundation/init';
+@use 'foundation/base';
+@use 'foundation/fonts';
+@use 'foundation/init';
 
 /* ==========================================================================
   Layout
 ========================================================================== */
-@import 'layout/layout';
-@import 'layout/header';
-@import 'layout/footer';
+@use 'layout/layout';
+@use 'layout/header';
+@use 'layout/footer';
 
 /* ==========================================================================
   Object
 ========================================================================== */
-@import 'object/component/btn';
-@import 'object/project/form';
+@use 'object/component/btn';
+@use 'object/project/form';
+@use 'object/project/product';
+@use 'object/project/slider';
+@use 'object/project/top';
