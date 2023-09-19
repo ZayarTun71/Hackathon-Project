@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import Footer from "../components/footer";
@@ -7,10 +7,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.min.js";
 import "jquery-match-height/dist/jquery.matchHeight-min.js";
+import { ProductList } from "../components/productList";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-
+  const productBlocInnerRef = useRef(null);
   const handleLogout = (e) => {
     ["token", "email", "name", "role"].forEach((cookieName) =>
       Cookies.remove(cookieName)
@@ -44,7 +45,8 @@ const Dashboard = () => {
 
         if ($(window).scrollTop() >= headerHeight) {
           $(".header").addClass("scr");
-        } else {
+        } 
+        else {
           $(".header").removeClass("scr");
         }
 
@@ -60,9 +62,6 @@ const Dashboard = () => {
       $(".product-bloc__inner").matchHeight();
     });
 
-    console.log("Dots Element:", $(".p-mainvisual__dots"));
-
-    
   }, []);
 
   return (
@@ -235,27 +234,12 @@ const Dashboard = () => {
                 <div className="l-wrap__inner">
                   <h1 className="title">Product Lists</h1>
                   <div className="product-list">
-                    <div className="product-bloc">
-                      <div className="product-bloc__inner">
-                        <div className="img-box">
-                          <img
-                            src="../img/product/product.png"
-                            alt="Product Image"
-                          />
-                        </div>
-                        <div className="txt-box">
-                          <div className="txt-box__inner">
-                            <p className="product-title">
-                              Lorem Ipsum Lorem Ipsum
-                            </p>
-                            <dl>
-                              <dt>Price</dt>
-                              <dd>$ 300</dd>
-                            </dl>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <ProductList />
+                    <ProductList />
+                    <ProductList />
+                    <ProductList />
+                    <ProductList />
+                    <ProductList />
                     {/* Add more product-bloc elements here */}
                   </div>
                 </div>
@@ -267,27 +251,12 @@ const Dashboard = () => {
                 <div className="l-wrap__inner">
                   <h1 className="title">Product Lists</h1>
                   <div className="product-list">
-                    <div className="product-bloc">
-                      <div className="product-bloc__inner">
-                        <div className="img-box">
-                          <img
-                            src="../img/product/product.png"
-                            alt="Product Image"
-                          />
-                        </div>
-                        <div className="txt-box">
-                          <div className="txt-box__inner">
-                            <p className="product-title">
-                              Lorem Ipsum Lorem Ipsum
-                            </p>
-                            <dl>
-                              <dt>Price</dt>
-                              <dd>$ 300</dd>
-                            </dl>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <ProductList />
+                    <ProductList />
+                    <ProductList />
+                    <ProductList />
+                    <ProductList />
+                    <ProductList />
                     {/* Add more product-bloc elements here */}
                   </div>
                 </div>
