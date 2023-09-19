@@ -348,7 +348,7 @@
           $('.header').removeClass('scr');
         }
 
-        $('html, body').animate({
+        $(window).animate({
           scrollTop: target.offset().top - headerHeight
         }, 800, 'swing');
       });
