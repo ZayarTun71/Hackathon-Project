@@ -6,6 +6,7 @@ $black :#333;
 $green: #50a7ba;
 
 .header {
+	position: relative;
 	background-color: $white;
 	box-shadow: 0 2px 3px rgb(68 68 68 / 60%);
 	z-index: 999;
@@ -22,15 +23,15 @@ $green: #50a7ba;
 				background: url('../img/header/logo.png');
 				background-size: 100% 100%;
 				background-repeat: no-repeat;
-				width: 65px;
-				height: 65px;
+				width: 50px;
+				height: 50px;
 
 				&:hover {
 					background: url('../img/header/logo_hover.png');
 					background-size: 100% 100%;
 					background-repeat: no-repeat;
-					width: 65px;
-					height: 65px;
+					width: 50px;
+					height: 50px;
 					transition: all .3s ease-in-out;
 				}
 			}
@@ -120,8 +121,8 @@ $green: #50a7ba;
 				.drp-menu {
 					width: 120px;
 					position: absolute;
-					top: 115%;
-					right: -25%;
+					top: 125%;
+					right: 0;
 					transform: translateX(0%) scaleY(.5);
 					transform-origin: top center;
 					text-align: left;
@@ -144,7 +145,7 @@ $green: #50a7ba;
 					&:before {
 						content: '';
 						position: absolute;
-						top: -12%;
+						top: -10%;
 						right: 5%;
 						border-bottom: solid 10px $green;
 						border-left: solid 10px transparent;
