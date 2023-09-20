@@ -34,7 +34,8 @@ const Login = () => {
           Cookies.set("name", res.data.name, { expires: 1 });
           Cookies.set("role", res.data.role, { expires: 1 });
           notify("login successfully", "success");
-          navigate("/");
+          navigate("/dashboard");
+          window.location.reload();
         }
       })
       .catch((err) => {

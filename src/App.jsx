@@ -8,9 +8,8 @@ import Dashboard from "./pages";
 import Register from "./pages/auth/register";
 
 function App() {
-  const navigate = useNavigate();
 
-  const [token, role] = [Cookies.get("token"), Cookies.get("role")];
+  const token = Cookies.get("token");
 
   return (
     <div>

@@ -11,12 +11,15 @@ import { ProductList } from "../components/productList";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const productBlocInnerRef = useRef(null);
+
+  const token = Cookies.get("token");
+
   const handleLogout = (e) => {
     ["token", "email", "name", "role"].forEach((cookieName) =>
       Cookies.remove(cookieName)
     );
     navigate("/");
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -106,16 +109,33 @@ const Dashboard = () => {
                 </label>
 
                 <ul className="drp-menu">
-                  <li>
-                    <Link to="#" className="drp-link">
-                      Register
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="drp-link">
-                      Login
-                    </Link>
-                  </li>
+                  {!token && (
+                    <>
+                      <li>
+                        <Link to="#" className="drp-link">
+                          Register
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="#" className="drp-link">
+                          Login
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                  {token && (
+                    <>
+                      <li>
+                        <Link
+                          to="#"
+                          className="drp-link"
+                          onClick={handleLogout}
+                        >
+                          Logout
+                        </Link>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
               {/* Before Login Show */}
@@ -147,21 +167,29 @@ const Dashboard = () => {
                     Contact Us
                   </Link>
                 </li>
-                <li>
-                  <Link to="#" className="nav-link">
-                    Login
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#" className="nav-link" onClick={handleLogout}>
-                    Logout
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#" className="nav-link">
-                    Register
-                  </Link>
-                </li>
+                {!token && (
+                  <>
+                    <li>
+                      <Link to="#" className="nav-link">
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="#" className="nav-link">
+                        Register
+                      </Link>
+                    </li>
+                  </>
+                )}
+                {token && (
+                  <>
+                    <li>
+                      <Link to="#" className="nav-link" onClick={handleLogout}>
+                        Logout
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>
