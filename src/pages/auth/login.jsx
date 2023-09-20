@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import iconUserImage from "../../../public/img/header/icon_user.png";
-import signUpImage from "../../../public/img/login/signup_image.jpg";
+import iconUserImage from "/img/header/icon_user.png";
+import signUpImage from "/img/login/signup_image.jpg";
 import Input from "../../components/input";
 import Alert, { notify } from "../../components/alert";
 import { loginRequest } from "../../api/auth";

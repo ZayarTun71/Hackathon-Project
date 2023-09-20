@@ -64,7 +64,7 @@ const Register = () => {
                 <div className="l-wrap__inner">
                   <div className="form-area">
                     <div className="img-box">
-                      <img src="../img/login/signup_image.jpg" alt="Login" />
+                      <img src="/img/login/signup_image.jpg" alt="Login" />
                     </div>
                     <motion.div 
                     initial={{ y: "0px", opacity: 0 }}

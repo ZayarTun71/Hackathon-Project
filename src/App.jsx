@@ -12,25 +12,22 @@ function App() {
 
   const [token, role] = [Cookies.get("token"), Cookies.get("role")];
 
-  useEffect(() => {
-    if (token === null) {
-      navigate("/");
-    }
-    if (token !== null) {
-      navigate("/dashboard");
-    }
-  }, [token]);
-
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        {token !== null && (
-          <Route
-            path="/dashboard/*"
-            element={token ? <Dashboard /> : <Navigate to="/" />}
-          />
+        {!token && (
+          <>
+            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </>
+        )}
+
+        {token && (
+          <>
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard/*" element={<Dashboard />} />
+          </>
         )}
       </Routes>
     </div>

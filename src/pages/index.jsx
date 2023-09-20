@@ -45,12 +45,11 @@ const Dashboard = () => {
 
         if ($(window).scrollTop() >= headerHeight) {
           $(".header").addClass("scr");
-        } 
-        else {
+        } else {
           $(".header").removeClass("scr");
         }
 
-        $("html, body").animate(
+        $(window).animate(
           {
             scrollTop: newScrollTop,
           },
@@ -61,7 +60,6 @@ const Dashboard = () => {
 
       $(".product-bloc__inner").matchHeight();
     });
-
   }, []);
 
   return (
@@ -104,7 +102,7 @@ const Dashboard = () => {
               <div className="nav-menu__icon">
                 <input type="checkbox" id="nav-drp" />
                 <label htmlFor="nav-drp" className="nav-drp-label">
-                  <img src="../img/header/icon_user.png" alt="" />
+                  <img src="/img/header/icon_user.png" alt="" />
                 </label>
 
                 <ul className="drp-menu">
@@ -177,7 +175,31 @@ const Dashboard = () => {
                   <ul className="slider p-slider__area--mainvisual">
                     <li className="slide-bg">
                       <img
-                        src="../img/slider/mainvisual/mainvisual1.png"
+                        src="/img/slider/mainvisual/mainvisual1.png"
+                        alt="mainvisual image"
+                        className="pc"
+                      />
+                      <img
+                        src="/img/slider/mainvisual/mainvisual1.png"
+                        alt="mainvisual image"
+                        className="sp"
+                      />
+                    </li>
+                    <li className="slide-bg">
+                      <img
+                        src="/img/slider/mainvisual/mainvisual2.png"
+                        alt="mainvisual image"
+                        className="pc"
+                      />
+                      <img
+                        src="/img/slider/mainvisual/mainvisual2.png"
+                        alt="mainvisual image"
+                        className="sp"
+                      />
+                    </li>
+                    <li className="slide-bg">
+                      <img
+                        src="/img/slider/mainvisual/mainvisual1.png"
                         alt="mainvisual image"
                         className="pc"
                       />
@@ -189,36 +211,12 @@ const Dashboard = () => {
                     </li>
                     <li className="slide-bg">
                       <img
-                        src="../img/slider/mainvisual/mainvisual2.png"
+                        src="/img/slider/mainvisual/mainvisual2.png"
                         alt="mainvisual image"
                         className="pc"
                       />
                       <img
-                        src="../img/slider/mainvisual/mainvisual2.png"
-                        alt="mainvisual image"
-                        className="sp"
-                      />
-                    </li>
-                    <li className="slide-bg">
-                      <img
-                        src="../img/slider/mainvisual/mainvisual1.png"
-                        alt="mainvisual image"
-                        className="pc"
-                      />
-                      <img
-                        src="../img/slider/mainvisual/mainvisual1.png"
-                        alt="mainvisual image"
-                        className="sp"
-                      />
-                    </li>
-                    <li className="slide-bg">
-                      <img
-                        src="../img/slider/mainvisual/mainvisual2.png"
-                        alt="mainvisual image"
-                        className="pc"
-                      />
-                      <img
-                        src="../img/slider/mainvisual/mainvisual2.png"
+                        src="/img/slider/mainvisual/mainvisual2.png"
                         alt="mainvisual image"
                         className="sp"
                       />
