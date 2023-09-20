@@ -66,10 +66,11 @@ const Register = () => {
                     <div className="img-box">
                       <img src="/img/login/signup_image.jpg" alt="Login" />
                     </div>
-                    <motion.div 
-                    initial={{ y: "0px", opacity: 0 }}
-                    animate={{ y: "0px", opacity: 1 }}
-                    className="txt-box">
+                    <motion.div
+                      initial={{ y: "0px", opacity: 0 }}
+                      animate={{ y: "0px", opacity: 1 }}
+                      className="txt-box"
+                    >
                       <div className="txt-box__inner">
                         <h2 className="title">Sign Up</h2>
                         <p className="desc">
@@ -134,8 +135,8 @@ const Register = () => {
                             <li>
                               <Input
                                 type="password"
-                                id="password"
-                                name="password"
+                                id="confirm_password"
+                                name="confirm_password"
                                 placeholder="Confirm Password"
                                 required
                                 onChange={(e) => {
