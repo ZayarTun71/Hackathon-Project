@@ -221,4 +221,20 @@
 			}
 		}
 	}
+
+	&--02 {
+		.s-link {
+			display: block;
+			font-size: 14px;
+			color: inherit;
+			text-align: center;
+			padding: 20px 5px;
+
+			&:hover {
+				opacity: .8;
+				transition: all .3s ease;
+				text-decoration: underline;
+			}
+		}
+	}
 }
