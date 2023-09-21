@@ -179,3 +179,46 @@
 		}
 	}
 }
+
+.social-link {
+	border-top: 1px solid #ccc;
+	margin-top: 30px;
+
+	p {
+		font-size: 14px;
+		text-align: center;
+		padding: 20px 5px;
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.fb {
+			padding-right: 20px;
+
+			&:before {
+				content: '';
+				display: block;
+				background: url('../img/login/icon_f.png');
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		.g {
+			&:before {
+				content: '';
+				display: block;
+				background: url('../img/login/icon_g.png');
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+}
