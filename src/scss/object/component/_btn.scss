@@ -33,5 +33,17 @@
 				font-size: 16px;
 			}
 		}
+
+		&--cart {
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.c-bnt {
+		&--cart {
+			padding: 5px;
+		}
 	}
 }

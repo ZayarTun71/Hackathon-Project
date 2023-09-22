@@ -11,7 +11,7 @@
 	&__inner {
 		max-width: 1000px;
 		margin: 0 auto;
-		padding: 100px 0;
+		padding: 100px 30px;
 
 		.label-title {
 			font-size: 40px;
@@ -64,26 +64,3 @@
 	}
 }
 
-@media screen and (max-width: 1024px) {
-	.l-label {
-		&__inner {
-			max-width: 700px;
-		}
-	}
-}
-
-@media screen and (max-width: 800px) {
-	.l-label {
-		&__inner {
-			max-width: 500px;
-		}
-	}
-}
-
-@media screen and (max-width: 400px) {
-	.l-label {
-		&__inner {
-			max-width: 280px;
-		}
-	}
-}
