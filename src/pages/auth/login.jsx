@@ -99,12 +99,26 @@ const Login = () => {
       });
   };
 
-  const responseFacebook = (response) => {
-    console.log(response);
-  };
+  const responseFacebook = async (response) => {
+    if (response.status !== "unknown") {
+      try {
+        // Make an API call to get user data using the access token
+        const userDataResponse = await axios.get(
+          `https://graph.facebook.com/v12.0/me?fields=id,name,email,picture&access_token=${response.accessToken}`
+        );
 
-  const componentClicked = (data) => {
-    console.log(data);
+        // Handle the user data as needed
+        const userData = userDataResponse.data;
+        console.log(userData);
+
+        // Now, you can use the user data in your application
+        // For example, you can set it in the app's state or perform other actions.
+      } catch (error) {
+        console.error("Error fetching user data from Facebook:", error);
+      }
+    } else {
+      console.log("Facebook login failed");
+    }
   };
 
   return (
@@ -179,25 +193,27 @@ const Login = () => {
                             </p>
                           </div>
 
-                          {/* <FacebookLogin
+                          <FacebookLogin
                             appId="1748716342291872"
-                            autoLoad={true}
+                            autoLoad={false}
                             fields="name,email,picture"
-                            onClick={componentClicked}
                             callback={responseFacebook}
-                          /> */}
-                          
-                          <div className="social-link social-link--02">
-                            <Link
-                              href="#"
-                              className="g"
-                              onClick={() => googleLogin()}
-                            >
-                              Login in with Google
-                            </Link>
-                            <Link href="#" className="fb">
-                              Login in with Facebook
-                            </Link>
+                          />
+
+                          <div className="social-link">
+                            <p>or sign up with:</p>
+                            <div className="social-link__icon">
+                              <Link
+                                href="#"
+                                className="g"
+                                onClick={() => googleLogin()}
+                              >
+                                Login in with Google
+                              </Link>
+                              <Link href="#" className="fb">
+                                Login in with Facebook
+                              </Link>
+                            </div>
                           </div>
                         </form>
                       </div>
