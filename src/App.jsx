@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import Login from "./pages/auth/login";
 import "./assets/scss/style.scss";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Cookies from "js-cookie";
 import Dashboard from "./pages";
 import Register from "./pages/auth/register";
+import DashboardLayout from "./components/admin_dashboard/AdminDashboardLayout";
+import { AppRoutes } from "./routes/appRoutes";
 
 function App() {
 
@@ -13,22 +14,7 @@ function App() {
 
   return (
     <div>
-      <Routes>
-        {!token && (
-          <>
-            <Route path="*" element={<Navigate to="/" replace />} />
-            <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </>
-        )}
-
-        {token && (
-          <>
-          <Route path="*" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard/*" element={<Dashboard />} />
-          </>
-        )}
-      </Routes>
+     <AppRoutes/>
     </div>
   );
 }

@@ -7,7 +7,6 @@ import Cookies from "js-cookie";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useGoogleLogin } from "@react-oauth/google";
-import FacebookLogin from "react-facebook-login";
 import axios from "axios";
 
 const Login = () => {
@@ -29,48 +28,48 @@ const Login = () => {
     key: "",
   });
 
-  const googleLogin = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-      const userInfo = await axios
-        .get("https://www.googleapis.com/oauth2/v3/userinfo", {
-          headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
-        })
-        .then((res) => res.data);
-      if (userInfo) {
-        setGoogleLoginData({
-          name: userInfo.name,
-          email: userInfo.email,
-          provider: "Google",
-          key: userInfo.sub,
-        });
-      }
-    },
-  });
+  // const googleLogin = useGoogleLogin({
+  //   onSuccess: async (tokenResponse) => {
+  //     const userInfo = await axios
+  //       .get("https://www.googleapis.com/oauth2/v3/userinfo", {
+  //         headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+  //       })
+  //       .then((res) => res.data);
+  //     if (userInfo) {
+  //       setGoogleLoginData({
+  //         name: userInfo.name,
+  //         email: userInfo.email,
+  //         provider: "Google",
+  //         key: userInfo.sub,
+  //       });
+  //     }
+  //   },
+  // });
 
-  useEffect(() => {
-    if (
-      googleLoginData.name &&
-      googleLoginData.email &&
-      googleLoginData.provider &&
-      googleLoginData.key
-    ) {
-      socialLoginRequest({ ...googleLoginData })
-        .then((res) => {
-          Cookies.set("id", res.data.id, { expires: 1 });
-          Cookies.set("token", res.data.token, { expires: 1 });
-          Cookies.set("email", res.data.email, { expires: 1 });
-          Cookies.set("name", res.data.name, { expires: 1 });
-          Cookies.set("role", res.data.role, { expires: 1 });
+  // useEffect(() => {
+  //   if (
+  //     googleLoginData.name &&
+  //     googleLoginData.email &&
+  //     googleLoginData.provider &&
+  //     googleLoginData.key
+  //   ) {
+  //     socialLoginRequest({ ...googleLoginData })
+  //       .then((res) => {
+  //         Cookies.set("id", res.data.id, { expires: 1 });
+  //         Cookies.set("token", res.data.token, { expires: 1 });
+  //         Cookies.set("email", res.data.email, { expires: 1 });
+  //         Cookies.set("name", res.data.name, { expires: 1 });
+  //         Cookies.set("role", res.data.role, { expires: 1 });
 
-          navigate("/dashboard");
-          notify("Login successfully", "success");
-          window.location.reload();
-        })
-        .catch((error) => {
-          console.error("Social login request failed:", error);
-        });
-    }
-  }, [googleLoginData]);
+  //         navigate("/dashboard");
+  //         notify("Login successfully", "success");
+  //         window.location.reload();
+  //       })
+  //       .catch((error) => {
+  //         console.error("Social login request failed:", error);
+  //       });
+  //   }
+  // }, [googleLoginData]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -99,27 +98,27 @@ const Login = () => {
       });
   };
 
-  const responseFacebook = async (response) => {
-    if (response.status !== "unknown") {
-      try {
-        // Make an API call to get user data using the access token
-        const userDataResponse = await axios.get(
-          `https://graph.facebook.com/v12.0/me?fields=id,name,email,picture&access_token=${response.accessToken}`
-        );
+  // const responseFacebook = async (response) => {
+  //   if (response.status !== "unknown") {
+  //     try {
+  //       // Make an API call to get user data using the access token
+  //       const userDataResponse = await axios.get(
+  //         `https://graph.facebook.com/v12.0/me?fields=id,name,email,picture&access_token=${response.accessToken}`
+  //       );
 
-        // Handle the user data as needed
-        const userData = userDataResponse.data;
-        console.log(userData);
+  //       // Handle the user data as needed
+  //       const userData = userDataResponse.data;
+  //       console.log(userData);
 
-        // Now, you can use the user data in your application
-        // For example, you can set it in the app's state or perform other actions.
-      } catch (error) {
-        console.error("Error fetching user data from Facebook:", error);
-      }
-    } else {
-      console.log("Facebook login failed");
-    }
-  };
+  //       // Now, you can use the user data in your application
+  //       // For example, you can set it in the app's state or perform other actions.
+  //     } catch (error) {
+  //       console.error("Error fetching user data from Facebook:", error);
+  //     }
+  //   } else {
+  //     console.log("Facebook login failed");
+  //   }
+  // };
 
   return (
     <div id="wrap">
@@ -193,14 +192,7 @@ const Login = () => {
                             </p>
                           </div>
 
-                          <FacebookLogin
-                            appId="1748716342291872"
-                            autoLoad={false}
-                            fields="name,email,picture"
-                            callback={responseFacebook}
-                          />
-
-                          <div className="social-link">
+                          {/* <div className="social-link">
                             <p>or sign up with:</p>
                             <div className="social-link__icon">
                               <Link
@@ -214,7 +206,7 @@ const Login = () => {
                                 Login in with Facebook
                               </Link>
                             </div>
-                          </div>
+                          </div> */}
                         </form>
                       </div>
                     </motion.div>

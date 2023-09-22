@@ -25,3 +25,9 @@
 @use 'object/project/product';
 @use 'object/project/slider';
 @use 'object/project/top';
+
+/* ==========================================================================
+  AdminDashboard
+========================================================================== */
+@use 'admin_dashboard/admin_dashboard_button';
+@use 'admin_dashboard/admin_dashboard_layout';
