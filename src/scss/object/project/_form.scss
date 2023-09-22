@@ -279,6 +279,13 @@
 
 @media screen and (max-width: 800px) {
 	.social-link {
+		p {
+			&:before,
+			&:after {
+				width: 24%;
+			}
+		}
+
 		&__icon {
 			.g,
 			.fb {
