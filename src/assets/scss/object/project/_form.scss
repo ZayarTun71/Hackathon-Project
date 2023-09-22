@@ -222,18 +222,32 @@
 	}
 
 	&--02 {
-		.s-link {
+		border-top: 0;
+
+		.g,
+		.fb {
 			display: block;
 			font-size: 14px;
-			color: inherit;
 			text-align: center;
 			padding: 20px 5px;
+			box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
 
 			&:hover {
 				opacity: .8;
 				transition: all .3s ease;
-				text-decoration: underline;
 			}
+		}
+
+		.g {
+			color: inherit;
+			background-color: #fff;
+			margin-bottom: 15px;
+		}
+
+		.fb {
+			color: #fff;
+			background-color: #4267B2;
+			margin-bottom: 15px;
 		}
 	}
 }

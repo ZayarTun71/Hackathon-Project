@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useGoogleLogin } from "@react-oauth/google";
+import FacebookLogin from "react-facebook-login";
 import axios from "axios";
 
 const Login = () => {
@@ -70,7 +71,6 @@ const Login = () => {
         });
     }
   }, [googleLoginData]);
-  
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -97,6 +97,14 @@ const Login = () => {
           notify("login failed", "error");
         }
       });
+  };
+
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
+
+  const componentClicked = (data) => {
+    console.log(data);
   };
 
   return (
@@ -171,20 +179,25 @@ const Login = () => {
                             </p>
                           </div>
 
-                          <div className="social-link">
-                            <p>or sign in with:</p>
-                            <div className="social-link__icon">
-                              <Link
-                                href="#"
-                                className="fb"
-                                // onClick={handleFacebookClick}
-                              ></Link>
-                              <Link
-                                href="#"
-                                className="g"
-                                onClick={() => googleLogin()}
-                              ></Link>
-                            </div>
+                          {/* <FacebookLogin
+                            appId="1748716342291872"
+                            autoLoad={true}
+                            fields="name,email,picture"
+                            onClick={componentClicked}
+                            callback={responseFacebook}
+                          /> */}
+                          
+                          <div className="social-link social-link--02">
+                            <Link
+                              href="#"
+                              className="g"
+                              onClick={() => googleLogin()}
+                            >
+                              Login in with Google
+                            </Link>
+                            <Link href="#" className="fb">
+                              Login in with Facebook
+                            </Link>
                           </div>
                         </form>
                       </div>
