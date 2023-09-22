@@ -180,59 +180,120 @@
 }
 
 .social-link {
-	border-top: 1px solid #ccc;
-	margin-top: 30px;
-
 	p {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		font-size: 14px;
-		text-align: center;
 		padding: 20px 5px;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			width: 30%;
+			height: 1px;
+			background: #ccc;
+		}
+
+		&:before {
+			left: 0;
+		}
+
+		&:after {
+			right: 0;
+		}
 	}
 
 	&__icon {
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex-direction: column;
 
+		.g,
 		.fb {
-			padding-right: 20px;
+			width: 100%;
+			font-size: 18px;
+			text-align: center;
+			padding: 20px 0;
+			box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
 
-			&:before {
-				content: '';
-				display: block;
-				background: url('../img/login/icon_f.png');
-				background-size: 100% 100%;
-				background-repeat: no-repeat;
-				width: 24px;
-				height: 24px;
+			&:hover {
+				opacity: .8;
+				transition: all .3s ease;
 			}
 		}
 
 		.g {
+			color: inherit;
+			background-color: #fff;
+			margin-bottom: 15px;
+
 			&:before {
 				content: '';
-				display: block;
+				position: absolute;
 				background: url('../img/login/icon_g.png');
 				background-size: 100% 100%;
 				background-repeat: no-repeat;
 				width: 20px;
 				height: 20px;
+				left: 16%;
+			}
+		}
+
+		.fb {
+			color: #fff;
+			background-color: #4267B2;
+			margin-bottom: 15px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				background: url('../img/login/icon_f_w.png');
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				width: 20px;
+				height: 20px;
+				left: 16%;
 			}
 		}
 	}
+}
 
-	&--02 {
-		.s-link {
-			display: block;
-			font-size: 14px;
-			color: inherit;
-			text-align: center;
-			padding: 20px 5px;
+@media screen and (max-width: 1024px) {
+	.social-link {
+		&__icon {
+			.g,
+			.fb {
+				&:before {
+					left: 5%;
+				}
+			}
+		}
+	}
+}
 
-			&:hover {
-				opacity: .8;
-				transition: all .3s ease;
-				text-decoration: underline;
+@media screen and (max-width: 800px) {
+	.social-link {
+		p {
+			&:before,
+			&:after {
+				width: 24%;
+			}
+		}
+
+		&__icon {
+			.g,
+			.fb {
+				font-size: 14px;
+
+				&:before {
+					left: 6%;
+				}
 			}
 		}
 	}
