@@ -11,10 +11,12 @@
     "scsslint": "stylelint --config .stylelintrc 'src/scss/*.scss'"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.11.1",
     "axios": "^1.4.0",
     "framer-motion": "^10.16.4",
     "jquery": "^3.7.1",
     "js-cookie": "^3.0.5",
+    "jwt-decode": "^3.1.2",
     "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",

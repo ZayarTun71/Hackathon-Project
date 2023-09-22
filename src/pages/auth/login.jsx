@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import iconUserImage from "/img/header/icon_user.png";
 import signUpImage from "/img/login/signup_image.jpg";
 import Input from "../../components/input";
 import Alert, { notify } from "../../components/alert";
-import { loginRequest } from "../../api/auth";
+import { loginRequest, socialLoginRequest } from "../../api/auth";
 import Cookies from "js-cookie";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useGoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,6 +21,57 @@ const Login = () => {
     password: "",
   });
 
+  const [googleLoginData, setGoogleLoginData] = useState({
+    name: "",
+    email: "",
+    provider: "",
+    key: "",
+  });
+
+  const googleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      const userInfo = await axios
+        .get("https://www.googleapis.com/oauth2/v3/userinfo", {
+          headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+        })
+        .then((res) => res.data);
+      if (userInfo) {
+        setGoogleLoginData({
+          name: userInfo.name,
+          email: userInfo.email,
+          provider: "Google",
+          key: userInfo.sub,
+        });
+      }
+    },
+  });
+
+  useEffect(() => {
+    if (
+      googleLoginData.name &&
+      googleLoginData.email &&
+      googleLoginData.provider &&
+      googleLoginData.key
+    ) {
+      socialLoginRequest({ ...googleLoginData })
+        .then((res) => {
+          Cookies.set("id", res.data.id, { expires: 1 });
+          Cookies.set("token", res.data.token, { expires: 1 });
+          Cookies.set("email", res.data.email, { expires: 1 });
+          Cookies.set("name", res.data.name, { expires: 1 });
+          Cookies.set("role", res.data.role, { expires: 1 });
+
+          navigate("/dashboard");
+          notify("Login successfully", "success");
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error("Social login request failed:", error);
+        });
+    }
+  }, [googleLoginData]);
+  
+
   const handleLogin = (e) => {
     e.preventDefault();
     loginRequest({
@@ -27,8 +79,8 @@ const Login = () => {
       password: loginData.password,
     })
       .then((res) => {
-        console.log(res);
         if (res.code == 200) {
+          Cookies.set("id", res.data.id, { expires: 1 });
           Cookies.set("token", res.data.token, { expires: 1 });
           Cookies.set("email", res.data.email, { expires: 1 });
           Cookies.set("name", res.data.name, { expires: 1 });
@@ -113,11 +165,26 @@ const Login = () => {
                               />
                             </li>
                           </ul>
-
                           <div className="c-btn">
                             <p className="btn">
                               <input type="submit" value="Sign In" />
                             </p>
+                          </div>
+
+                          <div className="social-link">
+                            <p>or sign in with:</p>
+                            <div className="social-link__icon">
+                              <Link
+                                href="#"
+                                className="fb"
+                                // onClick={handleFacebookClick}
+                              ></Link>
+                              <Link
+                                href="#"
+                                className="g"
+                                onClick={() => googleLogin()}
+                              ></Link>
+                            </div>
                           </div>
                         </form>
                       </div>

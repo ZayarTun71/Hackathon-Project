@@ -18,7 +18,31 @@ export function loginRequest({ email, password }) {
   });
 }
 
-export function registerRequest({name, email, password ,password_confirmation}) {
+export function socialLoginRequest({ name, email, provider, key }) {
+  const url = `${baseUrl}/api/auth/social/login`;
+  return new Promise((resolve, reject) => {
+    axios
+      .post(url, {
+        name,
+        email,
+        provider,
+        key,
+      })
+      .then(function (response) {
+        resolve(response.data);
+      })
+      .catch(function (error) {
+        reject(error);
+      });
+  });
+}
+
+export function registerRequest({
+  name,
+  email,
+  password,
+  password_confirmation,
+}) {
   const url = `${baseUrl}/api/auth/register`;
   return new Promise((resolve, reject) => {
     axios
@@ -26,7 +50,7 @@ export function registerRequest({name, email, password ,password_confirmation}) 
         name,
         email,
         password,
-        password_confirmation
+        password_confirmation,
       })
       .then(function (response) {
         resolve(response.data);
