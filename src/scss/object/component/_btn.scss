@@ -11,6 +11,19 @@
 			border: 0;
 		}
 	}	
+
+	&--cart {
+		background-color: #a8b324;
+		text-align: center;
+		width: 180px;
+		margin: 0 auto;
+		padding: 10px 5px;
+		box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
+
+		 .card-link {
+			color: #fff;
+		 }
+	}
 }
 
 @media screen and (max-width: 1024px) {

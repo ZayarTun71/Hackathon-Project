@@ -21,7 +21,9 @@
   Object
 ========================================================================== */
 @use 'object/component/btn';
+@use 'object/component/breadcrumb';
 @use 'object/project/form';
-@use 'object/project/product';
+@use 'object/project/product_list';
+@use 'object/project/product-detail';
 @use 'object/project/slider';
 @use 'object/project/top';
