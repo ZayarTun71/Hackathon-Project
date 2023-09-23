@@ -3,22 +3,15 @@
 .form-area {
 	display: flex;
 	flex-direction: row;
-	margin: 80px auto 60px;
+	max-width: 600px;
+	margin: 60px auto;
 	border-radius: 20px;
 	overflow: hidden;
 	box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
 
-	.img-box {
-		width: 50%;
-
-		img {
-			width: 100%;
-			height: 100%;
-		}
-	}
-
 	.txt-box {
-		width: 50%;
+		width: 100%;
+		margin: 0 auto;
 
 		&__inner {
 			max-width: 60%;
@@ -67,7 +60,7 @@
 							text-shadow: 0 0 0 #000 !important;
 
 							&:hover {
-								border: 2px solid #50a7ba;
+								border: 2px solid #80891b;;
 							}
 
 							&:focus-visible {
@@ -121,12 +114,6 @@
 
 @media screen and (max-width: 800px) {
 	.form-area {
-		.img-box {
-			img {
-				height: 100%;
-			}
-		}
-
 		.txt-box {
 			&__inner {
 				max-width: 75%;
@@ -163,18 +150,6 @@
 					}
 				}
 			}
-		}
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.form-area {
-		.img-box {
-			display: none;
-		}
-
-		.txt-box {
-			width: 100%;
 		}
 	}
 }
