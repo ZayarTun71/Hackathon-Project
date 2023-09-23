@@ -133,7 +133,8 @@
 
 $slideDot: 4px;
 
-.p-slider {
+.p-slider,
+.product-slider {
 	.slick-dots {
 		display: block;
 		width: 100%;
@@ -186,7 +187,8 @@ $slideDot: 4px;
 }
 
 @media screen and (max-width: 600px) {
-	.p-slider {
+	.p-slider,
+	.product-slider {
 		.slick-dots {
 			li {
 				width: 68px;
@@ -204,11 +206,11 @@ $slideDot: 4px;
 	}
 }
 
-.p-slider {
+.p-slider,
+.product-slider {
 	button.slick-arrow {
 		width: 60px;
 		height: 60px;
-
 		position: absolute;
 		top: 50%;
 		margin-top: -30px;
@@ -220,7 +222,6 @@ $slideDot: 4px;
 		outline: none !important;
 		cursor: pointer;
 		appearance: none;
-
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: 20px 20px;
@@ -245,12 +246,71 @@ $slideDot: 4px;
 	}
 }
 
-@media screen and (max-width: 600px) {
-	.p-slider {
+.product-slider {
+	button.slick-arrow {
+		width: 50px;
+		height: 50px;
+		top: 7%;
+
+		&:hover {
+			opacity: .8s;
+			transition: all .3s ease;
+		}
+	}
+
+	.slick-prev {
+		left: 88%;
+	}
+
+	.slick-next{
+		right: 0;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.product-slider {
+		.slick-prev {
+			left: 83%;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.p-slider,
+	.product-slider {
 		button.slick-arrow {
 			width: 46px;
 			height: 46px;
 			margin-top: -23px;
+		}
+	}
+
+	.product-slider {
+		.slick-prev {
+			left: 80%;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.product-slider {
+		.slick-prev {
+			left: 68%;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.product-slider {
+		button.slick-arrow {
+			width: 36px;
+			height: 36px;
+			margin-top: -20px;
+			background-size: 18px 18px;
+		}
+
+		.slick-prev {
+			left: 72%;
 		}
 	}
 }

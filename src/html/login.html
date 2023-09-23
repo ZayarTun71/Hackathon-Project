@@ -9,12 +9,13 @@
 	<meta name="description" content=" ">
 	<meta property="og:image" content="../img/meta/ogp_image.png">
 
-	<!-- <link href="../img/meta/favicons/favicon.ico" rel="shortcut icon">
-	<link rel="apple-touch-icon" sizes="180x180" href="../img/meta/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../img/meta/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../img/meta/favicons/favicon-16x16.png">
-	<link rel="manifest" href="../img/meta/favicons/site.webmanifest">
-	<link rel="mask-icon" href="../img/meta/favicons/safari-pinned-tab.svg" color="#5bbad5"> -->
+	<link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="../img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#cccccc">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
 
 	<link rel="stylesheet" href="../css/style.css" type="text/css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,18 +37,33 @@
 			<header class="header">
 				<div class="header__inner">
 					<div class="logo">
-						<!-- <a href="/"><img src="../img/header/logo.png" alt=""></a> -->
 						<a href="/" class="logo-link"></a>
 					</div>
 					<div class="nav-menu">
 						<ul class="nav-menu__list">
 							<li><a href="#" class="nav-link">Home</a></li>
+							<li>
+								<a href="#" class="nav-link h-c">Shop</a>
+								<ul class="menu-pulldown">
+									<li><a href="#" class="sub-link">Snacks</a></li>
+									<li><a href="#" class="sub-link">Lunch Box</a></li>
+									<li><a href="#" class="sub-link">Sale</a></li>
+								</ul>
+							</li>
 							<li><a href="#" class="nav-link">About</a></li>
-							<li><a href="#" class="nav-link">Information</a></li>
-							<li><a href="#" class="nav-link">Contact Us</a></li>
-							<li><a href="#" class="nav-link">Product</a></li>
+							<li><a href="#" class="nav-link">Contact</a></li>
 						</ul>
-						<!-- After Login Show -->
+						<div class="search">
+							<input type="text" class="search__term" placeholder="What are you looking for?">
+							<button type="submit" class="search__btn"></button>
+						</div>
+			
+						<div class="cart">
+							<a href="#" class="cart-icon">
+								<span class='counter'>0</span></a>
+						</div>
+			
+						<!-- Before Login Show-->
 						<div class="nav-menu__icon">
 							<input type="checkbox" id="nav-drp">
 							<label for="nav-drp" class="nav-drp-label">
@@ -55,11 +71,11 @@
 							</label>
 			
 							<ul class="drp-menu">
-								<li><a href="#" class="drp-link">My Account</a></li>
-								<li><a href="#" class="drp-link">Logout</a></li>
+								<li><a href="#" class="drp-link">Register</a></li>
+								<li><a href="#" class="drp-link">Login</a></li>
 							</ul>
 						</div>
-						<!-- After Login Show -->
+						<!-- Before Login Show-->
 					</div>
 			
 					<div id="nav">
@@ -67,12 +83,15 @@
 						<span></span><span></span><span></span>
 						<ul id="menu">
 							<li><a href="#" class="nav-link">Home</a></li>
-							<li><a href="#" class="nav-link">About</a></li>
-							<li><a href="#" class="nav-link">Information</a></li>
+							<li><a href="#" class="nav-link">Shop</a>
+								<ul class="spmenu-pulldown">
+									<li><a href="#" class="sub-link">Snacks</a></li>
+									<li><a href="#" class="sub-link">Lunch Box</a></li>
+									<li><a href="#" class="sub-link">Sale</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="nav-link">About Us</a></li>
 							<li><a href="#" class="nav-link">Contact Us</a></li>
-							<li><a href="#" class="nav-link">Login</a></li>
-							<li><a href="#" class="nav-link">Logout</a></li>
-							<li><a href="#" class="nav-link">Register</a></li>
 						</ul>
 					</div>
 				</div>
@@ -85,9 +104,6 @@
 						<div class="p-bloc__content l-wrap__outer">
 							<div class="l-wrap__inner">
 								<div class="form-area">
-									<div class="img-box">
-										<img src="../img/login/signup_image.jpg" alt="Login">
-									</div>
 									<div class="txt-box">
 										<div class="txt-box__inner">
 											<h2 class="title">Login</h2>

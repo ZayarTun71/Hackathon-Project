@@ -36,14 +36,13 @@
         <header class="header header--top">
           <div class="header__inner">
             <div class="logo">
-              <!-- <a href="/"><img src="../img/header/logo.png" alt=""></a> -->
               <a href="/" class="logo-link"></a>
             </div>
             <div class="nav-menu">
               <ul class="nav-menu__list">
                 <li><a href="#" class="nav-link">Home</a></li>
                 <li>
-                  <a href="#" class="nav-link">Shop</a>
+                  <a href="#" class="nav-link h-c">Shop</a>
                   <ul class="menu-pulldown">
                     <li><a href="#" class="sub-link">Snacks</a></li>
                     <li><a href="#" class="sub-link">Lunch Box</a></li>
@@ -56,6 +55,11 @@
               <div class="search">
                 <input type="text" class="search__term" placeholder="What are you looking for?">
                 <button type="submit" class="search__btn"></button>
+              </div>
+
+              <div class="cart">
+                <a href="#" class="cart-icon">
+                <span class='counter'>0</span></a>
               </div>
 
               <!-- Before Login Show-->
@@ -78,7 +82,13 @@
               <span></span><span></span><span></span>
               <ul id="menu">
                 <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Shop</a></li>
+                <li><a href="#" class="nav-link">Shop</a>
+                  <ul class="spmenu-pulldown">
+                    <li><a href="#" class="sub-link">Snacks</a></li>
+                    <li><a href="#" class="sub-link">Lunch Box</a></li>
+                    <li><a href="#" class="sub-link">Sale</a></li>
+                  </ul>
+                </li>
                 <li><a href="#" class="nav-link">About Us</a></li>
                 <li><a href="#" class="nav-link">Contact Us</a></li>
               </ul>
@@ -95,19 +105,24 @@
                   <ul class="slider p-slider__area--mainvisual">
                     <li class="slide-bg">
                       <img src="../img/slider/mainvisual/mainvisual1.png" alt="mainvisual image">
-                      <ul class="slide-txt slide-right">
-                        <li>Eat clean & green. <br> Eat Organic</li>
-                        <li>Enhanced with plant proteins, healthy fats and <br> antioxidant rich superfoods.</li>
+                      <ul class="slide-txt">
+                        <li class="is-delighter" data-delighter>Eat clean & green. <br> Eat Organic</li>
+                        <li class="is-delighter" data-delighter>Enhanced with plant proteins, healthy fats and <br> antioxidant rich superfoods.</li>
+                        <li class="is-delighter" data-delighter>
+                          <div class="c-btn c-btn--item-list"><a href="/items-detail" class="card-link">Shop Now</a></div>
+                        </li>
                       </ul>
-                      <div class="c-btn c-btn--item-list slide-right--02"><a href="/items-detail" class="card-link">Shop Now</a></div>
+                      
                     </li>
                     <li class="slide-bg">
                       <img src="../img/slider/mainvisual/mainvisual2.png" alt="mainvisual image">
-                      <ul class="slide-txt slide-right">
-                        <li>Sprouted & Organic <br> Gulten Free Snacks</li>
-                        <li>Enhanced with plant proteins, healthy fats and <br> antioxidant rich superfoods.</li>
+                      <ul class="slide-txt">
+                        <li class="is-delighter" data-delighter>Sprouted & Organic <br> Gulten Free Snacks</li>
+                        <li class="is-delighter" data-delighter>Enhanced with plant proteins, healthy fats and <br> antioxidant rich superfoods.</li>
+                        <li class="is-delighter" data-delighter>
+                          <div class="c-btn c-btn--item-list"><a href="/items-detail" class="card-link">Shop Now</a></div>
+                        </li>
                       </ul>
-                      <div class="c-btn c-btn--item-list slide-right--02"><a href="/items-detail" class="card-link">Shop Now</a></div>
                     </li>
                   </ul>
                 </div>
@@ -120,7 +135,263 @@
             <section class="p-bloc">
               <div class="p-bloc__content l-wrap__outer">
                 <div class="l-wrap__inner">
-                  <h1 class="title">Product Lists</h1>
+                  <div class="banner">
+                    <div class="banner__inner">
+                      <div class="banner-img">
+                        <img src="../img/banner/banner2.png" alt="Banner">
+                      </div>
+                      <div class="banner-img">
+                        <img src="../img/banner/banner1.png" alt="Banner">
+                      </div>
+                      <div class="banner-img">
+                        <img src="../img/banner/banner3.png" alt="Banner">
+                      </div>
+                      <div class="banner-img">
+                        <img src="../img/banner/banner4.png" alt="Banner">
+                      </div>
+                      <div class="banner-img">
+                        <img src="../img/banner/banner5.png" alt="Banner">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="recommend" is-delighter" data-delighter">
+                    <div class="recommend__inner">
+                      <h3 class="title"><a href="">Snack</a></h3>
+                      <div class="product-list">
+                        <div class="product-list__inner product-slider">
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a href="#" class="show-all">Show All >></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="recommend">
+                    <div class="recommend__inner">
+                      <h3 class="title"><a href="">Lunch Box</a></h3>
+                      <div class="product-list">
+                        <div class="product-list__inner product-slider">
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-bloc">
+                            <div class="product-bloc__inner">
+                              <div class="img-box">
+                                <img src="../img/product/product2.png" alt="Product Image">
+                              </div>
+                              <div class="txt-box">
+                                <div class="txt-box__inner">
+                                  <p class="product-title">Product Name</p>
+                                  <dl>
+                                    <dd>$ 300</dd>
+                                  </dl>
+                                  <div class="c-btn c-btn--cart">
+                                    <a href="/items-detail" class="card-link">Add To Cart</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a href="#" class="show-all">Show All >></a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -138,8 +409,10 @@
 
     <!-- js -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/delighters.js"></script>
    <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <script type="text/javascript">
       $('a[href^="#"]').click(function (e) {
         e.preventDefault();
@@ -168,6 +441,37 @@
         arrows: true,
         dots: false,
         appendDots: $('.p-mainvisual__dots')
+      });
+
+      $('.banner-img img').matchHeight({ byRow: false });
+
+      $('.product-list__inner').slick({
+        dots: false,
+        speed: 400,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        pauseOnHover: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        infinite: true,
+        responsive: [
+          {
+            breakpoint: 801,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: false,
+            }
+          },
+          {
+            breakpoint: 601,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: false,
+            }
+          }
+        ]
       });
     </script>
 
