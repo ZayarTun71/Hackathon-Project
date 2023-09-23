@@ -57,6 +57,19 @@
 	}
 }
 
+.recommend {
+	.product-list {
+		.product-bloc {
+			width: calc(100% / 4 - 23px);
+			margin-right: 30px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 600px) {
 	.product-list {
 		padding: 40px 0;
