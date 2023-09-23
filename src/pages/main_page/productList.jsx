@@ -17,6 +17,17 @@ const ProductList = () => {
     }
   }, [data]);
 
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(itemList.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const itemsToDisplay = itemList.slice(startIndex, endIndex);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <Dashboard
       children={
@@ -36,9 +47,10 @@ const ProductList = () => {
                     </select>
                   </div>
                 </div>
+
                 <div className="product-list">
                   <div className="product-list__inner">
-                    {itemList.map((item) => (
+                    {itemsToDisplay.map((item) => (
                       <ProductCard
                         key={item.id}
                         id={item.id}
@@ -48,7 +60,8 @@ const ProductList = () => {
                       />
                     ))}
                   </div>
-                  <div className="item__paging">
+
+                  {/* <div className="item__paging">
                     <ul className="paging">
                       <li className="prev">
                         <a href="#" className="paging-link">
@@ -73,6 +86,50 @@ const ProductList = () => {
                       </li>
                       <li className="next">
                         <a href="#" className="paging-link">
+                          <img
+                            src="../img/common/paging_arrow_right.png"
+                            alt="＞"
+                          />
+                        </a>
+                      </li>
+                    </ul>
+                  </div> */}
+
+                  <div className="item__paging">
+                    <ul className="paging">
+                      <li className="prev">
+                        {/* Implement previous page navigation */}
+                        <a
+                          href="#"
+                          className="paging-link"
+                          onClick={() => handlePageChange(currentPage - 1)}
+                        >
+                          <img
+                            src="../img/common/paging_arrow_left.png"
+                            alt="＜"
+                          />
+                        </a>
+                      </li>
+                      {Array.from({ length: totalPages }).map((_, index) => (
+                        <li key={index}>
+                          <a
+                            href="#"
+                            className={`paging-link ${
+                              currentPage === index + 1 ? "active" : ""
+                            }`}
+                            onClick={() => handlePageChange(index + 1)}
+                          >
+                            {index + 1}
+                          </a>
+                        </li>
+                      ))}
+                      <li className="next">
+                        {/* Implement next page navigation */}
+                        <a
+                          href="#"
+                          className="paging-link"
+                          onClick={() => handlePageChange(currentPage + 1)}
+                        >
                           <img
                             src="../img/common/paging_arrow_right.png"
                             alt="＞"
