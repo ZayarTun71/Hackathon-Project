@@ -58,7 +58,6 @@
 				}
 			}
 			
-
 			.product-info {
 				padding-bottom: 30px;
 
@@ -81,10 +80,73 @@
 					color: #555;
 				}
 			}
-
+		
 			.product-add {
 				display: flex;
-				flex-direction: row;
+				flex-direction: column;
+
+				.subsc-title {
+					font-size: 20px;
+					padding-bottom: 15px;
+				}
+
+				&__inner {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 30px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					.subsc-btn {
+						input[type="radio"] {
+							appearance: none;
+						}
+					
+						input[type="radio"]+label {
+							cursor: pointer;
+							position: relative;
+							padding-left: 25px;
+							line-height: 20px;
+						}
+					
+						input[type="radio"]+label:before {
+							content: "";
+							display: inline-block;
+							width: 15px;
+							aspect-ratio: 1;
+							border: 1px solid #a8b324;
+							border-radius: 50%;
+							position: absolute;
+							top: 50%;
+							left: 0;
+							transform: translateY(-50%);
+							opacity: 1;
+							transition: all .3s;
+						}
+					
+						input[type="radio"]+label:after {
+							content: "";
+							display: inline-block;
+							width: 5px;
+							aspect-ratio: 1;
+							border: 1px solid #a8b324;
+							background: #a8b324;
+							border-radius: 50%;
+							position: absolute;
+							left: 5px;
+							top: 50%;
+							transform: translateY(-50%);
+							opacity: 0;
+							transition: all .3s;
+							}
+						
+							input[type="radio"]:checked+label:after {
+								opacity: 1;
+							}			
+					}
+				}
 
 				.product-qty {
 					position: relative;
@@ -244,6 +306,20 @@
 
 @media screen and (max-width: 1024px) {
 	.product-detail {
+		&__inner {
+			.txt-box {
+				.product-add {
+					&__inner {
+						.subsc-btn {
+							input[type="radio"]+label {
+								padding-left: 22px;
+							}
+						}
+					}
+				}
+			}
+		}
+
 		.additional-info {
 			&__inner {
 				.title {
@@ -316,6 +392,14 @@
 				}
 
 				.product-add {
+					&__inner {
+						.subsc-btn {
+							label {
+								font-size: 14px;
+							}
+						}
+					}
+
 					.product-qty input {
 						width: 100px;
 					}
