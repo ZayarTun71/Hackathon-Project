@@ -23,6 +23,17 @@
 		 .card-link {
 			color: #fff;
 		 }
+
+		&.disable {
+			background-color: #999;
+			width: 100%;
+
+			a {
+				width: 100%;
+				margin: 0;
+				pointer-events: none;
+			}
+		}
 	}
 }
 
@@ -36,6 +47,23 @@
 
 		&--cart {
 			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.p-bloc {
+		&--item-detail {
+			.c-btn {
+				&--cart {
+					max-width: 300px;
+					margin: 0;
+
+					&.disable {
+						max-width: 100%;
+					}
+				}
+			}
 		}
 	}
 }

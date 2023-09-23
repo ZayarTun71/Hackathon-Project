@@ -70,14 +70,33 @@
 	}
 }
 
+@media screen and (max-width: 800px) {
+	.recommend {
+		.product-list {
+			.product-bloc {
+				width: calc(100% / 2 - 15px);
+
+				&:nth-of-type(2n + 2) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 600px) {
 	.product-list {
 		padding: 40px 0;
+
+		&__inner {
+			padding: 0 0 40px;
+		}
 
 		.product-bloc {
 			width: calc(100% / 2 - 10px);
 			margin-right: 20px;
 			margin-bottom: 20px;
+			margin-top: 20px;
 
 			&:nth-of-type(3n + 3) {
 				margin-right: 20px;
@@ -85,6 +104,21 @@
 
 			&:nth-of-type(2n + 2) {
 				margin-right: 0;
+			}
+		}
+	}
+
+	.recommend {
+		.product-list {
+			padding: 0;
+
+			&__inner {
+				padding: 0;
+			}
+
+			.product-bloc {
+				width: calc(50% - 10px);
+				margin-right: 20px;
 			}
 		}
 	}
