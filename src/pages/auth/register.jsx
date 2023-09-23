@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Input from "../../components/input";
+import Input from "../../components/main_page/input";
 import { registerRequest } from "../../api/auth";
-import Alert, { notify } from "../../components/alert";
 import { motion } from "framer-motion";
 
 const Register = () => {

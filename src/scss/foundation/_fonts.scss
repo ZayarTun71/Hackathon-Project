@@ -1,0 +1,20 @@
+@charset 'utf-8';
+
+/* web fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300;400;500;600;700&display=swap');
+
+html,
+body {
+  font-family: Kreon, serif;
+  font-display: swap;
+}
+
+/* IE11 */
+@media all and (-ms-high-contrast: none) {
+  *::-ms-backdrop,
+  html,
+  body {
+    font-family: Kreon, serif;
+    font-display: swap;
+  }
+}

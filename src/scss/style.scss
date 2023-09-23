@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/*  normalize.css */
+// @use "~normalize.css/normalize.css";
+
+/* ==========================================================================
+  Foundation
+========================================================================== */
+@use 'foundation/base';
+@use 'foundation/fonts';
+@use 'foundation/init';
+
+/* ==========================================================================
+  Layout
+========================================================================== */
+@use 'layout/layout';
+@use 'layout/header';
+@use 'layout/footer';
+
+/* ==========================================================================
+  Object
+========================================================================== */
+@use 'object/component/btn';
+@use 'object/component/breadcrumb';
+@use 'object/component/paging';
+@use 'object/project/form';
+@use 'object/project/product_list';
+@use 'object/project/product-detail';
+@use 'object/project/slider';
+@use 'object/project/top';

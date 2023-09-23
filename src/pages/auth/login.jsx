@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import signUpImage from "/img/login/signup_image.jpg";
-import Input from "../../components/input";
-import Alert, { notify } from "../../components/alert";
+import Input from "../../components/main_page/input";
 import { loginRequest, socialLoginRequest } from "../../api/auth";
 import Cookies from "js-cookie";
 import { Link, useLocation, useNavigate } from "react-router-dom";

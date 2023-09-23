@@ -1,22 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export const ProductList = () => {
+const ProductCard = ({id,name,price,image}) => {
   return (
     <div className="product-bloc">
       <div className="product-bloc__inner">
         <div className="img-box">
-          <img src="../img/product/product2.png" alt="Product Image" />
+          <img src={image} alt="Product Image" />
         </div>
         <div className="txt-box">
           <div className="txt-box__inner">
-            <p className="product-title">Product Name</p>
+            <p className="product-title">{name}</p>
             <dl>
-              <dd>$ 300</dd>
+              <dd>{price}MMK</dd>
             </dl>
             <div className="c-btn c-btn--cart">
-              <a href="/items-detail" className="card-link">
+              <Link to={`/dashboard/product-detail?id=${id}`} className="card-link">
                 Add To Cart
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -24,3 +25,5 @@ export const ProductList = () => {
     </div>
   );
 };
+
+export default ProductCard;

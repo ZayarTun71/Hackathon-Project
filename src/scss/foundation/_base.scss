@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+html,
+body,
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	-webkit-text-rendering: geometricprecision;
+	-moz-text-rendering: geometricprecision;
+	-ms-text-rendering: geometricprecision;
+	-o-text-rendering: geometricprecision;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a[href^="tel"] {
+	color: inherit;
+	text-decoration: none;
+}
+
+.clearfix:after,
+.u-clearfix:after {
+	height: 0;
+	visibility: hidden;
+	content: '.';
+	display: block;
+	clear: both;
+}
+
+.u-body-mask {
+	overflow: hidden;
+}
+
+/* bool class
+------------------------- */
+.is-show {
+	display: block !important;
+}
+
+.is-hide {
+	display: none !important;
+}
+
+.is-transparency {
+	opacity: 0;
+}
+
+.is-translate3d {
+	transform: translate3d(0, 0, 0);
+}
+
+.is-translatenone {
+	transform: none;
+	animation-name: none;
+	animation-duration: 0;
+	animation-iteration-count: 0;
+}
+
+.is-3d {
+	transform-style: preserve-3d;
+}

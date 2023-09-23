@@ -3,9 +3,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import User from "../pages/admin_dashboard/user/user";
 import Item from "../pages/admin_dashboard/item/item";
-import Login from "../pages/auth/login";
-import Register from "../pages/auth/register";
-import Dashboard from "../pages";
+import ProductList from "../pages/main_page/productList";
+import { ProductDetail } from "../pages/main_page/productDetail";
 
 export const AppRoutes = () => {
   const token = Cookies.get("token");
@@ -15,7 +14,8 @@ export const AppRoutes = () => {
       <Routes>
         <Route path="/admin-dashboard/user" element={<User />} />
         <Route path="/admin-dashboard/item" element={<Item />} />
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/dashboard/product-list" element={<ProductList/>} />
+        <Route path="/dashboard/product-detail" element={<ProductDetail/>} />
         {/* {!token && (
           <>
             <Route path="*" element={<Navigate to="/" replace />} />
