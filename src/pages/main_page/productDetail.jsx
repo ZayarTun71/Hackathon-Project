@@ -15,7 +15,7 @@ export const ProductDetail = () => {
     name: "",
     description: "",
     price: "",
-    image: "",
+    image_url: "",
     stock: "",
   });
 
@@ -48,7 +48,7 @@ export const ProductDetail = () => {
                     description={itemData.description}
                     price={itemData.price}
                     stock={itemData.stock}
-                    image="/img/product/product1.png"
+                    image={itemData.image_url}
                   />
 
                   <div className="additional-info">

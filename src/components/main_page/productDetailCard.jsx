@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
 
-const ProductDetailCard = ({ name, price, description, stock,image }) => {
+const ProductDetailCard = ({ name, price, description, stock, image }) => {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
@@ -57,27 +57,33 @@ const ProductDetailCard = ({ name, price, description, stock,image }) => {
           <div className="product-info">
             <h3 className="title">{name}</h3>
             <span className="price">{price} MMK</span>
-            <p className="desc">
-             {description}
-            </p>
+            <p className="desc">{description}</p>
           </div>
 
           <div className="product-add">
-            <div className="product-qty">
-              <input
-                type="number"
-                min="1"
-                max="10"
-                step="1"
-                value={quantity}
-                disabled
-              />
-            </div>
+            <div class="product-add__inner">
+              {stock == 1 && (
+                <div className="product-qty">
+                  <input
+                    type="number"
+                    min="1"
+                    max="10"
+                    step="1"
+                    value={quantity}
+                    disabled
+                  />
+                </div>
+              )}
 
-            <div className="c-btn c-btn--cart">
-              <a href="tems-detail" className="card-link">
-                Add To Cart
-              </a>
+              <div
+                className={
+                  stock == 1 ? "c-btn c-btn--cart" : "c-btn c-btn--cart disable"
+                }
+              >
+                <a href="tems-detail" className="card-link">
+                  Add To Cart
+                </a>
+              </div>
             </div>
           </div>
         </div>

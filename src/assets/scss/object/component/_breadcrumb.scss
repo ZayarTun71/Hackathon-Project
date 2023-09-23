@@ -64,3 +64,26 @@
 	}
 }
 
+@media screen and (max-width: 600px) {
+	.l-label {
+		height: 280px;
+
+		&__inner {
+			padding: 90px 30px;
+
+			.label-title {
+				font-size: 30px;
+			}
+
+			ul {
+				li {
+					padding-right: 15px;
+
+					.label-link {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}

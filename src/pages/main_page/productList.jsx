@@ -44,7 +44,7 @@ const ProductList = () => {
                         id={item.id}
                         name={item.name}
                         price={item.price}
-                        image="/img/product/product1.png"
+                        image={item.image_url}
                       />
                     ))}
                   </div>
