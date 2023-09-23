@@ -15,6 +15,7 @@ export const AppRoutes = () => {
       <Routes>
         <Route path="/admin-dashboard/user" element={<User />} />
         <Route path="/admin-dashboard/item" element={<Item />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
         {/* {!token && (
           <>
             <Route path="*" element={<Navigate to="/" replace />} />

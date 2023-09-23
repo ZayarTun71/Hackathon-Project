@@ -5,15 +5,19 @@ export const ProductList = () => {
     <div className="product-bloc">
       <div className="product-bloc__inner">
         <div className="img-box">
-          <img src="/img/product/product.png" alt="Product Image" />
+          <img src="../img/product/product2.png" alt="Product Image" />
         </div>
         <div className="txt-box">
           <div className="txt-box__inner">
-            <p className="product-title">Lorem Ipsum Lorem Ipsum</p>
+            <p className="product-title">Product Name</p>
             <dl>
-              <dt>Price</dt>
               <dd>$ 300</dd>
             </dl>
+            <div className="c-btn c-btn--cart">
+              <a href="/items-detail" className="card-link">
+                Add To Cart
+              </a>
+            </div>
           </div>
         </div>
       </div>

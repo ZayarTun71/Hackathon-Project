@@ -32,7 +32,7 @@
     <div id="wrap">
       <div class="project-wrap">
 
-        <header class="header">
+        <header class="header header--top">
           <div class="header__inner">
             <div class="logo">
               <!-- <a href="/"><img src="../img/header/logo.png" alt=""></a> -->
@@ -41,10 +41,20 @@
             <div class="nav-menu">
               <ul class="nav-menu__list">
                 <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <li><a href="#" class="nav-link">Information</a></li>
+                <li>
+                  <a href="#" class="nav-link">Shop</a>
+                  <ul class="menu-pulldown">
+                    <li>
+                      <a href="#">Items</a>
+                      <a href="#">Items</a>
+                      <a href="#">Items</a>
+                      <a href="#">Items</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#" class="nav-link">About Us</a></li>
                 <li><a href="#" class="nav-link">Contact Us</a></li>
-                <li><a href="#" class="nav-link">Product</a></li>
+                <li><a href="#" class="nav-link">Contact Us</a></li>
               </ul>
               <!-- Before Login Show-->
               <div class="nav-menu__icon">
@@ -66,12 +76,9 @@
               <span></span><span></span><span></span>
               <ul id="menu">
                 <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <li><a href="#" class="nav-link">Information</a></li>
+                <li><a href="#" class="nav-link">Shop</a></li>
+                <li><a href="#" class="nav-link">About Us</a></li>
                 <li><a href="#" class="nav-link">Contact Us</a></li>
-                <li><a href="#" class="nav-link">Login</a></li>
-                <li><a href="#" class="nav-link">Logout</a></li>
-                <li><a href="#" class="nav-link">Register</a></li>
               </ul>
             </div>
           </div>
@@ -79,7 +86,7 @@
 
         <section class="l-content-area">
           <div class="l-content">
-            
+      
             <section class="p-mainvisual">
               <div class="p-slider p-slider--mainvisual">
                 <div class="p-mainvisual__img">
@@ -357,10 +364,10 @@
         fade: true,
         autoplay: true,
         pauseOnHover: false,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 8000,
         speed: 800,
-        arrows: false,
-        dots: true,
+        arrows: true,
+        dots: false,
         appendDots: $('.p-mainvisual__dots')
       });
     </script>

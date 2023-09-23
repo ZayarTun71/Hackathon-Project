@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team2</title>
+    <meta name="keywords" content=" ">
+    <meta name="description" content=" ">
+    <meta property="og:image" content="../img/meta/ogp_image.png">
+
+    <!-- <link href="../img/meta/favicons/favicon.ico" rel="shortcut icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/meta/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/meta/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/meta/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../img/meta/favicons/site.webmanifest">
+    <link rel="mask-icon" href="../img/meta/favicons/safari-pinned-tab.svg" color="#5bbad5"> -->
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <script src=""></script>
+
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="application-name" content="">
+    <meta name="msapplication-TileColor" content="#78c7ff">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="project-wrap">
+
+        <header class="header">
+          <div class="header__inner">
+            <div class="logo">
+              <!-- <a href="/"><img src="../img/header/logo.png" alt=""></a> -->
+              <a href="/" class="logo-link"></a>
+            </div>
+            <div class="nav-menu">
+              <ul class="nav-menu__list">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li>
+                  <a href="#" class="nav-link">Shop</a>
+                  <ul class="menu-pulldown">
+                    <li>
+                      <a href="#">Items</a>
+                      <a href="#">Items</a>
+                      <a href="#">Items</a>
+                      <a href="#">Items</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#" class="nav-link">About Us</a></li>
+                <li><a href="#" class="nav-link">Contact Us</a></li>
+                <li><a href="#" class="nav-link">Contact Us</a></li>
+              </ul>
+              <!-- Before Login Show-->
+              <div class="nav-menu__icon">
+                <input type="checkbox" id="nav-drp">
+                <label for="nav-drp" class="nav-drp-label">
+                  <img src="../img/header/icon_user.png" alt="">
+                </label>
+        
+                <ul class="drp-menu">
+                  <li><a href="#" class="drp-link">Register</a></li>
+                  <li><a href="#" class="drp-link">Login</a></li>
+                </ul>
+              </div>
+              <!-- Before Login Show-->
+            </div>
+        
+            <div id="nav">
+              <input type="checkbox" />
+              <span></span><span></span><span></span>
+              <ul id="menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Shop</a></li>
+                <li><a href="#" class="nav-link">About Us</a></li>
+                <li><a href="#" class="nav-link">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <section class="l-content-area">
+          <div class="l-content">
+            <section class="l-label">
+              <div class="l-label__inner">
+                <h2 class="label-title">Items</h2>
+                <ul>
+                  <li><a href="#" class="label-link">Home</a></li>
+                  <li><a href="#" class="label-link active">Items</a></li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="p-bloc p-bloc--item-list">
+              <div class="p-bloc__content l-wrap__outer">
+                <div class="l-wrap__inner">
+                  <div class="sorting">
+                    <p>Showing 1–12 of 40 results</p>
+                    <div class="sorting-list">
+                      <select>
+                        <option value="0">Default sorting</option>
+                        <option value="1">Sort by popularity</option>
+                        <option value="2">Sort by latest</option>
+                        <option value="3">Sort by price: low to high</option>
+                        <option value="4">Sort by price: high to low</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="product-list">
+                    <div class="product-list__inner">
+                      <div class="product-bloc">
+                        <div class="product-bloc__inner">
+                          <div class="img-box">
+                            <img src="../img/product/product1.png" alt="Product Image">
+                          </div>
+                          <div class="txt-box">
+                            <div class="txt-box__inner">
+                              <p class="product-title">Product Name</p>
+                              <dl>
+                                <dd>$ 300</dd>
+                              </dl>
+                              <div class="c-btn c-btn--cart">
+                                <a href="/items-detail" class="card-link">Add To Cart</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-bloc">
+                        <div class="product-bloc__inner">
+                          <div class="img-box">
+                            <img src="../img/product/product2.png" alt="Product Image">
+                          </div>
+                          <div class="txt-box">
+                            <div class="txt-box__inner">
+                              <p class="product-title">Product Name</p>
+                              <dl>
+                                <dd>$ 300</dd>
+                              </dl>
+                              <div class="c-btn c-btn--cart">
+                                <a href="/items-detail" class="card-link">Add To Cart</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-bloc">
+                        <div class="product-bloc__inner">
+                          <div class="img-box">
+                            <img src="../img/product/product1.png" alt="Product Image">
+                          </div>
+                          <div class="txt-box">
+                            <div class="txt-box__inner">
+                              <p class="product-title">Product Name</p>
+                              <dl>
+                                <dd>$ 300</dd>
+                              </dl>
+                              <div class="c-btn c-btn--cart">
+                                <a href="/items-detail" class="card-link">Add To Cart</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-bloc">
+                        <div class="product-bloc__inner">
+                          <div class="img-box">
+                            <img src="../img/product/product2.png" alt="Product Image">
+                          </div>
+                          <div class="txt-box">
+                            <div class="txt-box__inner">
+                              <p class="product-title">Product Name</p>
+                              <dl>
+                                <dd>$ 300</dd>
+                              </dl>
+                              <div class="c-btn c-btn--cart">
+                                <a href="/items-detail" class="card-link">Add To Cart</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-bloc">
+                        <div class="product-bloc__inner">
+                          <div class="img-box">
+                            <img src="../img/product/product1.png" alt="Product Image">
+                          </div>
+                          <div class="txt-box">
+                            <div class="txt-box__inner">
+                              <p class="product-title">Product Name</p>
+                              <dl>
+                                <dd>$ 300</dd>
+                              </dl>
+                              <div class="c-btn c-btn--cart">
+                                <a href="/items-detail" class="card-link">Add To Cart</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-bloc">
+                        <div class="product-bloc__inner">
+                          <div class="img-box">
+                            <img src="../img/product/product2.png" alt="Product Image">
+                          </div>
+                          <div class="txt-box">
+                            <div class="txt-box__inner">
+                              <p class="product-title">Product Name</p>
+                              <dl>
+                                <dd>$ 300</dd>
+                              </dl>
+                              <div class="c-btn c-btn--cart">
+                                <a href="/items-detail" class="card-link">Add To Cart</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item__paging">
+                      <ul class="paging">
+                        <li class="prev"><a href="#" class="paging-link"><img src="../img/common/paging_arrow_left.png" alt="＜"></a></li>
+                        <li><span>1</span></li>
+                        <li><a href="#" class="paging-link">2</a></li>
+                        <li><a href="#" class="paging-link">3</a></li>
+                        <li class="next"><a href="#" class="paging-link"><img src="../img/common/paging_arrow_right.png" alt="＞"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+          </div>
+        </section>
+
+      </div><!-- project-wrap -->
+
+
+      <footer class="footer">
+        <address>Copyright © 2023 Team 2 All Rights Reserved</address>
+      </footer>
+
+    </div>
+
+    <!-- js -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript">
+      $('a[href^="#"]').click(function (e) {
+        e.preventDefault();
+      });
+
+      $(window).scroll(function () {
+        const headerHeight = $('.header').outerHeight();
+        if ($(window).scrollTop() >= headerHeight) {
+          $('.header').addClass('scr');
+        }
+        else {
+          $('.header').removeClass('scr');
+        }
+
+        $(window).animate({
+          scrollTop: target.offset().top - headerHeight
+        }, 800, 'swing');
+      });
+
+      $('.p-slider__area--mainvisual').slick({
+        fade: true,
+        autoplay: true,
+        pauseOnHover: false,
+        autoplaySpeed: 8000,
+        speed: 800,
+        arrows: true,
+        dots: false,
+        appendDots: $('.p-mainvisual__dots')
+      });
+    </script>
+
+  </body>
+</html>
