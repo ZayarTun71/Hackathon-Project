@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+.card {
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		padding: 60px 0;
+
+		.item-list {
+			width: 55%;
+
+			.item-table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-bottom: 60px;
+		
+				tr {
+					text-align: center;
+					color: #0a472e;
+					border-bottom: 1px solid #ebebeb;
+		
+					th {
+						font-size: 14px;
+						font-weight: 400;
+						padding-bottom: 20px;
+					}
+		
+					td {
+						font-size: 16px;
+		
+						img {
+							max-width: 90px;
+						}
+		
+						&.del {
+							position: relative;
+							width: 5%;
+		
+							&:before {
+								content: '';
+								position: absolute;
+								background: url('../img/common/icon_delete.png');
+								background-size: 100% 100%;
+								background-repeat: no-repeat;
+								width: 26px;
+								height: 26px;
+								left: 0;
+								top: 35%;
+							}
+						}
+					}
+				}
+			}
+
+			.coupon {
+				display: flex;
+
+				input[type="text"] {
+					text-indent: 10px;
+				}
+			}
+		}
+		
+		.amt {
+			width: 30%;
+			border: 6px solid #ebebeb;
+			padding: 20px;
+
+			.amt-table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-bottom: 30px;
+
+				tr {
+					color: #0a472e;
+					border-bottom: 1px solid #ebebeb;
+
+					&:last-child {
+						border-bottom: 0;
+					}
+
+					th,
+					td {
+						padding: 20px;
+					}
+
+					th {
+						font-size: 24px;
+						font-weight: 600;
+					}
+
+					td {
+						font-size: 20px;
+						font-weight: 700;
+
+						&.total {
+							font-size: 24px;
+							color: #80891b;
+						}
+					}
+				}
+			}
+		}
+	}
+}

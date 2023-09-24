@@ -17,7 +17,7 @@ export const notify = (message, status) => {
   }
 };
 
-const Alert = () => {
+export const Alert = () => {
   return (
     <ToastContainer
       position="top-center"
@@ -33,4 +33,3 @@ const Alert = () => {
   );
 };
 
-export default Alert;

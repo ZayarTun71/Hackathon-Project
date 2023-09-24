@@ -76,23 +76,6 @@ var Delighters = new function () {
         }
       }
 
-      // if (factorStart < del.start && !del.started) {
-      //   del.started = true;
-      //   del.el.classList.add(options.classNames[1])
-      // }
-      // else if (factorStart > del.start && del.started) {
-      //   del.started = false;
-      //   del.el.classList.remove(options.classNames[1])
-      // }
-      // if (factorEnd < del.end && !del.ended) {
-      //   del.ended = true;
-      //   del.el.classList.add(options.classNames[2])
-      // }
-      // else if (factorEnd > del.end && del.ended) {
-      //   del.ended = false;
-      //   del.el.classList.remove(options.classNames[2])
-      // }
-
       if (factorStart < del.start && !del.started) {
         del.started = true;
         del.el.classList.add(options.classNames[1]);

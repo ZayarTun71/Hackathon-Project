@@ -28,3 +28,17 @@ export const GetItemRequest = async () => {
       });
     return res;
   };
+
+  export const GetSnackRequest = async () => {
+    const url = `${baseUrl}/api/item/category/snack`;
+    const res = await axios
+      .get(url, {
+        headers: {
+        //   Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        return response.data;
+      });
+    return res;
+  };

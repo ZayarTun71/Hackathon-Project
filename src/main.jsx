@@ -12,9 +12,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        {/* <GoogleOAuthProvider clientId={clientId}> */}
+        <GoogleOAuthProvider clientId={clientId}>
           <App />
-        {/* </GoogleOAuthProvider> */}
+        </GoogleOAuthProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>

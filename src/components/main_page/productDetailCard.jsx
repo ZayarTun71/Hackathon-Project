@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
+import { Link } from "react-router-dom";
 
 const ProductDetailCard = ({ name, price, description, stock, image }) => {
   
@@ -15,42 +16,6 @@ const ProductDetailCard = ({ name, price, description, stock, image }) => {
     const subscription = parseInt(event.target.value, 10);
     setSubscriptionType(subscription);
   };
-  console.log(subscriptionType);
-  useEffect(() => {
-    // $(document).ready(function () {
-    //   $(
-    //     '<div class="product-qty-nav"><div class="product-qty-button product-qty-up">+</div><div class="product-qty-button product-qty-down">-</div></div>'
-    //   ).insertAfter(".product-qty input");
-    //   $(".product-qty").each(function () {
-    //     var spinner = $(this),
-    //       input = spinner.find('input[type="number"]'),
-    //       btnUp = spinner.find(".product-qty-up"),
-    //       btnDown = spinner.find(".product-qty-down"),
-    //       min = input.attr("min"),
-    //       max = input.attr("max");
-    //     btnUp.click(function () {
-    //       var oldValue = parseFloat(input.val());
-    //       if (oldValue >= max) {
-    //         var newVal = oldValue;
-    //       } else {
-    //         var newVal = oldValue + 0.5;
-    //       }
-    //       input.val(newVal).trigger("change");
-    //       setQuantity(newVal);
-    //     });
-    //     btnDown.click(function () {
-    //       var oldValue = parseFloat(input.val());
-    //       if (oldValue <= min) {
-    //         var newVal = oldValue;
-    //       } else {
-    //         var newVal = oldValue - 0.5;
-    //       }
-    //       input.val(newVal).trigger("change");
-    //       setQuantity(newVal);
-    //     });
-    //   });
-    // });
-  }, []);
 
   // const mydata=[
   //   {
@@ -169,9 +134,9 @@ const ProductDetailCard = ({ name, price, description, stock, image }) => {
                   stock == 1 ? "c-btn c-btn--cart" : "c-btn c-btn--cart disable"
                 }
               >
-                <a href="tems-detail" className="card-link">
+                <Link to="/login" className="card-link">
                   Add To Cart
-                </a>
+                </Link>
               </div>
             </div>
           </div>
