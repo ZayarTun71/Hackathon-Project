@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import $ from "jquery";
 import "slick-carousel/slick/slick.min.js";
 import "jquery-match-height/dist/jquery.matchHeight-min.js";
+import { Reveiw } from "../components/main_page/reveiw";
 
 const Dashboard = ({ virsual, children, children_two }) => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Dashboard = ({ virsual, children, children_two }) => {
   };
 
   useEffect(() => {
+
     $(window).ready(function () {
       $('a[href^="#"]').click(function (e) {
         e.preventDefault();
@@ -50,39 +52,53 @@ const Dashboard = ({ virsual, children, children_two }) => {
         appendDots: $(".p-mainvisual__dots"),
       });
 
-      // Match heights of your banner images
       $(".banner-img img").matchHeight({ byRow: false });
 
-      // Your product list slick carousel initialization
-      $(".product-list__inner").slick({
-        dots: false,
+      const currentRoute = window.location.pathname;
+      if(currentRoute=="/"){
+        $(".product-list__inner").slick({
+          dots: false,
+          speed: 400,
+          autoplay: true,
+          autoplaySpeed: 8000,
+          pauseOnHover: true,
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          responsive: [
+            {
+              breakpoint: 801,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: false,
+              },
+            },
+            {
+              breakpoint: 601,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: false,
+              },
+            },
+          ],
+        });
+      }
+     
+      $('.review-list').slick({
+        dots: true,
         speed: 400,
         autoplay: true,
         autoplaySpeed: 8000,
         pauseOnHover: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         infinite: true,
-        responsive: [
-          {
-            breakpoint: 801,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              infinite: false,
-            },
-          },
-          {
-            breakpoint: 601,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              infinite: false,
-            },
-          },
-        ],
+        arrows: false
       });
     });
+    
   }, []);
 
   useEffect(() => {
@@ -207,6 +223,7 @@ const Dashboard = ({ virsual, children, children_two }) => {
           {children_two && <>{children_two}</>}
         </section>
       </div>
+      <Reveiw/>
       <Footer />
     </div>
   );

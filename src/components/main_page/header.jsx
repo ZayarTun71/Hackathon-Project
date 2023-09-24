@@ -27,6 +27,7 @@ const Header = (top) => {
     <header className={`header ${currentRoute=="/"?"header--top":"header"}`}>
       <div className="header__inner">
         <div className="logo">
+        <a href="#" className="logo-link logo-link--02"> </a>
           <a href="/" className="logo-link"></a>
         </div>
         <div className="nav-menu">

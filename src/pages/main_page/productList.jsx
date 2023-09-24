@@ -39,7 +39,7 @@ const ProductList = () => {
       children={
         <>
           <div className="sorting">
-            <p>Showing 1–12 of 40 results</p>
+            <p>Showing 1–6 of 10 results</p>
             <div className="sorting-list">
               <select>
                 <option value="0">Default sorting</option>

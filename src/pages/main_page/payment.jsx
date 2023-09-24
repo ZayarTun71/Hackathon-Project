@@ -182,7 +182,7 @@ const Payment = () => {
                       <td>
                         {item.item_name} x {item.quantity}
                       </td>
-                      <td>{item.item_price * item.quantity}MK</td>
+                      <td>{item.item_price * item.quantity} MMK</td>
                     </tr>
                   ))}
 
