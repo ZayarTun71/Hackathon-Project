@@ -1,11 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
-const Header = (top) => {
+const Header = () => {
   const navigate = useNavigate();
   const token = Cookies.get("token");
-  const [amount , setAmount]=useState(0);
+  const [amount, setAmount] = useState(0);
 
   const cartList = Cookies.get("cartList")
     ? JSON.parse(Cookies.get("cartList"))
@@ -18,24 +28,42 @@ const Header = (top) => {
   };
 
   useEffect(() => {
-   setAmount(cartList.length)
+    setAmount(cartList.length);
   }, [cartList]);
 
   const currentRoute = window.location.pathname;
 
+  const scrollToBottom = () => {
+    scroll.scrollToBottom();
+  };
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
+  const handleLogout = (e) => {
+    ["token", "email", "name", "role", "cartList"].forEach((cookieName) =>
+      Cookies.remove(cookieName)
+    );
+    navigate("/");
+  };
+
   return (
-    <header className={`header ${currentRoute=="/"?"header--top":"header"}`}>
+    <header
+      className={`header ${currentRoute == "/" ? "header--top" : "header"}`}
+    >
       <div className="header__inner">
         <div className="logo">
-        <a href="#" className="logo-link logo-link--02"> </a>
+          <a href="#" className="logo-link logo-link--02">
+            {" "}
+          </a>
           <a href="/" className="logo-link"></a>
         </div>
         <div className="nav-menu">
           <ul className="nav-menu__list">
             <li>
-              <a href="#" className="nav-link">
+              <Link to="" href="#" className="nav-link" onClick={scrollToTop}>
                 Home
-              </a>
+              </Link>
             </li>
             <li className="sub">
               <a href="#" className="nav-link h-c">
@@ -43,31 +71,51 @@ const Header = (top) => {
               </a>
               <ul className="menu-pulldown">
                 <li>
-                  <a href="#" className="sub-link">
+                  <Link
+                    to=""
+                    href="#"
+                    className="sub-link"
+                    onClick={() => scroll.scrollTo(1400)}
+                  >
                     Snacks
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="sub-link">
+                  <Link
+                    to=""
+                    href="#"
+                    className="sub-link"
+                    onClick={() => scroll.scrollTo(2500)}
+                  >
                     Lunch Box
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="sub-link">
+                  <Link to="" href="#" className="sub-link">
                     Sale
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="#" className="nav-link">
+              <Link
+                to=""
+                href="#"
+                className="nav-link"
+                onClick={scrollToBottom}
+              >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-link">
+              <Link
+                to=""
+                href="#"
+                className="nav-link"
+                onClick={scrollToBottom}
+              >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="search">
@@ -80,7 +128,9 @@ const Header = (top) => {
           </div>
           <div className="cart">
             <a className="cart-icon" onClick={handleCart}>
-              <span className="counter">{amount == undefined ? 0 : amount}</span>
+              <span className="counter">
+                {amount == undefined ? 0 : amount}
+              </span>
             </a>
           </div>
 
@@ -89,20 +139,32 @@ const Header = (top) => {
             <label htmlFor="nav-drp" className="nav-drp-label">
               <img src="../img/header/icon_user.png" alt="" />
             </label>
-            {!token && (
-              <ul className="drp-menu">
-                <li>
-                  <a href="#" className="drp-link">
-                    Register
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="drp-link">
-                    Login
-                  </a>
-                </li>
-              </ul>
-            )}
+
+            <ul className="drp-menu">
+              {!token && (
+                <>
+                  <li>
+                    <Link to="/login" href="#" className="drp-link">
+                      Register
+                    </Link>
+                  </li>
+                  <li>
+                    <a to="/register" href="#" className="drp-link">
+                      Login
+                    </a>
+                  </li>
+                </>
+              )}
+              {token && (
+                <>
+                  <li>
+                    <a href="#" className="drp-link" onClick={handleLogout}>
+                      Logout
+                    </a>
+                  </li>
+                </>
+              )}
+            </ul>
           </div>
         </div>
         <div id="nav">
@@ -112,9 +174,9 @@ const Header = (top) => {
           <span></span>
           <ul id="menu">
             <li>
-              <a href="#" className="nav-link">
+              <Link to="" className="nav-link" onClick={scrollToTop}>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="nav-link">
@@ -139,14 +201,14 @@ const Header = (top) => {
               </ul>
             </li>
             <li>
-              <a href="#" className="nav-link">
+              <Link to="" className="nav-link" onClick={scrollToBottom}>
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-link">
+              <Link to="" className="nav-link" onClick={scrollToBottom}>
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

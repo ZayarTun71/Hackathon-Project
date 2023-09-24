@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const MainVisual = () => {
-  
   return (
     <section className="p-mainvisual">
       <div className="p-slider p-slider--mainvisual">
@@ -13,14 +12,14 @@ const MainVisual = () => {
                 alt="mainvisual image"
               />
               <ul className="slide-txt">
-                <li className="is-delighter" data-delighter>
+                <li className="slide-right">
                   Eat clean & green. <br /> Eat Organic
                 </li>
-                <li className="is-delighter" data-delighter>
+                <li className="slide-right">
                   Enhanced with plant proteins, healthy fats and <br />{" "}
                   antioxidant-rich superfoods.
                 </li>
-                <li className="is-delighter" data-delighter>
+                <li className="slide-right">
                   <div className="c-btn c-btn--item-list">
                     <Link to="/main/product-list" className="card-link">
                       Shop Now
@@ -35,18 +34,18 @@ const MainVisual = () => {
                 alt="mainvisual image"
               />
               <ul className="slide-txt">
-                <li className="is-delighter" data-delighter>
+                <li className="slide-right">
                   Sprouted & Organic <br /> Gluten-Free Snacks
                 </li>
-                <li className="is-delighter" data-delighter>
+                <li className="slide-right">
                   Enhanced with plant proteins, healthy fats and <br />{" "}
                   antioxidant-rich superfoods.
                 </li>
-                <li className="is-delighter" data-delighter>
+                <li className="slide-right">
                   <div className="c-btn c-btn--item-list">
-                    <a href="/main/product-list" className="card-link">
+                    <Link to="/main/product-list" className="card-link">
                       Shop Now
-                    </a>
+                    </Link>
                   </div>
                 </li>
               </ul>

@@ -24,7 +24,7 @@ const Cart = () => {
             <div className="p-bloc__content l-wrap__outer">
               <div className="l-wrap__inner">
                 <div className="cart">
-                  <div className="card__inner">
+                  <div className="cart__inner">
                     <div className="item-list">
                       <div className="item-list__inner">
 
