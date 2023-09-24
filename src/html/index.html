@@ -426,13 +426,20 @@
                     <ul>
                       <li class="rate">4.8</li>
                       <li class="star"><img src="../img/common/icon_rating.png" alt="Rating image"></li>
-                      <li class="review">Trustscore on 525 reviews</li>
+                      <li class="review">Trustscore on 365 reviews</li>
                     </ul>
                     <a href="#" class="review-link">See All Reviews >> </a>
                   </div>
                 </div>
                 <div class="review-box">
-                
+                  <div class="review-box__inner">
+                    <ul>
+                      <li class="profile"><img src="../img/common/user1.png" alt="Profile"></li>
+                      <li>Thiha Kyaw</li>
+                    </ul>
+                    <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the good work!
+                    Garden was worth a fortune to my company."</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -478,6 +485,16 @@
         arrows: true,
         dots: false,
         appendDots: $('.p-mainvisual__dots')
+      });
+
+      $('.review-box__inner').slick({
+        fade: true,
+        autoplay: true,
+        pauseOnHover: false,
+        autoplaySpeed: 8000,
+        speed: 800,
+        arrows: true,
+        dots: false
       });
 
       $('.banner-img img').matchHeight({ byRow: false });
