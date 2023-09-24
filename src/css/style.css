@@ -1191,40 +1191,40 @@ body.and #wrap {
   }
 }
 /* cart-payment */
-.cart__inner .bill-info {
+.cart--payment .cart__inner .bill-info {
   width: 35%;
 }
-.cart__inner .bill-info .title {
+.cart--payment .cart__inner .bill-info .title {
   text-align: left;
   padding-bottom: 30px;
 }
-.cart__inner .bill-info__inner form ul {
+.cart--payment .cart__inner .bill-info__inner form ul {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
 }
-.cart__inner .bill-info__inner form ul li {
+.cart--payment .cart__inner .bill-info__inner form ul li {
   padding-bottom: 30px;
 }
-.cart__inner .bill-info__inner form ul li:last-child {
+.cart--payment .cart__inner .bill-info__inner form ul li:last-child {
   padding-bottom: 0;
 }
-.cart__inner .bill-info__inner form ul li label {
+.cart--payment .cart__inner .bill-info__inner form ul li label {
   font-size: 18px;
   line-height: 1.2;
   font-weight: 500;
 }
-.cart__inner .bill-info__inner form ul li label.required {
+.cart--payment .cart__inner .bill-info__inner form ul li label.required {
   display: relative;
 }
-.cart__inner .bill-info__inner form ul li label.required:after {
+.cart--payment .cart__inner .bill-info__inner form ul li label.required:after {
   content: "*";
   position: absolute;
   width: 20px;
   color: red;
   padding-left: 3px;
 }
-.cart__inner .bill-info__inner form ul li input[type=text] {
+.cart--payment .cart__inner .bill-info__inner form ul li input[type=text] {
   display: block;
   width: 100%;
   height: 35px;
@@ -1232,51 +1232,51 @@ body.and #wrap {
   text-indent: 15px;
   text-shadow: 0 0 0 #000 !important;
 }
-.cart__inner .bill-info__inner form ul li input[type=text]:hover {
+.cart--payment .cart__inner .bill-info__inner form ul li input[type=text]:hover {
   border: 2px solid #80891b;
 }
-.cart__inner .bill-info__inner form ul li input[type=text]:focus-visible {
+.cart--payment .cart__inner .bill-info__inner form ul li input[type=text]:focus-visible {
   outline: none;
 }
-.cart__inner .bill-info__inner .payment {
+.cart--payment .cart__inner .bill-info__inner .payment {
   padding-bottom: 30px;
 }
-.cart__inner .bill-info__inner .payment p {
+.cart--payment .cart__inner .bill-info__inner .payment p {
   font-size: 20px;
   padding-bottom: 20px;
 }
-.cart__inner .bill-info__inner .payment__inner {
+.cart--payment .cart__inner .bill-info__inner .payment__inner {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 30px;
 }
-.cart__inner .bill-info__inner .payment__inner .payment-btn {
+.cart--payment .cart__inner .bill-info__inner .payment__inner .payment-btn {
   display: inline-flex;
   justify-content: center;
 }
-.cart__inner .bill-info__inner .payment__inner .payment-btn label {
+.cart--payment .cart__inner .bill-info__inner .payment__inner .payment-btn label {
   position: relative;
   font-size: 18px;
   margin-left: 5px;
 }
-.cart__inner .bill-info__inner .payment__inner .payment-btn label:before {
+.cart--payment .cart__inner .bill-info__inner .payment__inner .payment-btn label:before {
   content: "";
   position: absolute;
   width: 60px;
   height: 60px;
 }
-.cart__inner .bill-info__inner .payment__inner .payment-btn label.kpay:before {
+.cart--payment .cart__inner .bill-info__inner .payment__inner .payment-btn label.kpay:before {
   background: url("../img/common/kpay.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.cart__inner .bill-info__inner .payment__inner .payment-btn label.wave:before {
+.cart--payment .cart__inner .bill-info__inner .payment__inner .payment-btn label.wave:before {
   background: url("../img/common/wave.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.cart__inner .amt {
+.cart--payment .cart__inner .amt {
   width: 45%;
 }
 
