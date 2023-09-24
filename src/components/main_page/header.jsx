@@ -52,11 +52,11 @@ const Header = () => {
       className={`header ${currentRoute == "/" ? "header--top" : "header"}`}
     >
       <div className="header__inner">
-        <div className="logo">
-          <a href="#" className="logo-link logo-link--02">
+        <div className="logo" onClick={() => navigate("/")}>
+          <Link to="/" href="#" className="logo-link logo-link--02">
             {" "}
-          </a>
-          <a href="/" className="logo-link"></a>
+          </Link>
+          <Link to="/" href="/" className="logo-link"></Link>
         </div>
         <div className="nav-menu">
           <ul className="nav-menu__list">

@@ -5,7 +5,7 @@ import ProductDetailCard from "../../components/main_page/productDetailCard";
 import { GetItemByIdRequest } from "../../api/product";
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
-import Content from "../../components/main_page/content";
+import { ContentDetail } from "../../components/main_page/content";
 
 export const ProductDetail = () => {
   const location = useLocation();
@@ -38,7 +38,7 @@ export const ProductDetail = () => {
     <Dashboard
       virsual={
         <>
-          <Content />
+          <ContentDetail name={itemData.name} />
         </>
       }
       children={

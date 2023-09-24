@@ -32,12 +32,13 @@ export const CartCheckout = () => {
           </tr>
         </tbody>
       </table>
-
-      <div className="c-btn c-btn--checkout">
-        <Link to="/main/cart/payment" className="card-link">
-          Checkout
-        </Link>
-      </div>
+      {!cartList.length == 0 && (
+        <div className="c-btn c-btn--checkout">
+          <Link to="/main/cart-payment" className="card-link">
+            Checkout
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

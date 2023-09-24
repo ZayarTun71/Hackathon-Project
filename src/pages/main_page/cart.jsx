@@ -1,6 +1,6 @@
 import React from "react";
 import Dashboard from "..";
-import Content from "../../components/main_page/content";
+import {Content, ContentCart} from "../../components/main_page/content";
 import Cookies from "js-cookie";
 import CartTable from "../../components/main_page/cartTable";
 import { CartCheckout } from "../../components/main_page/cartCheckout";
@@ -15,7 +15,7 @@ const Cart = () => {
     <Dashboard
       virsual={
         <>
-          <Content />
+          <ContentCart />
         </>
       }
       children_two={

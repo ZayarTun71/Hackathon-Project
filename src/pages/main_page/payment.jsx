@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Dashboard from "..";
-import Content from "../../components/main_page/content";
+import {Content} from "../../components/main_page/content";
 import Cookies from "js-cookie";
 import { paymentRequest } from "../../api/payment";
 import { Alert, notify } from "../../components/main_page/alert";

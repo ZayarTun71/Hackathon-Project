@@ -3,7 +3,7 @@ import Dashboard from "..";
 import ProductCard from "../../components/main_page/productCard";
 import { GetItemRequest } from "../../api/product";
 import { useQuery } from "react-query";
-import Content from "../../components/main_page/content";
+import {Content} from "../../components/main_page/content";
 
 const ProductList = () => {
   const [itemList, setItemList] = useState([]);

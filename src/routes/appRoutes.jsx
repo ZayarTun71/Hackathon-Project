@@ -23,24 +23,13 @@ export const AppRoutes = () => {
         <Route path="/main/product-list" element={<ProductList />} />
         <Route path="/main/product-detail" element={<ProductDetail />} />
         <Route path="/main/cart" element={<Cart />} />
-        <Route path="/main/cart/payment" element={<Payment />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-
-        {/* {!token && (
+        <Route path="/main/cart-payment" element={<Payment />} />
+        {!token && (
           <>
-            <Route path="*" element={<Navigate to="/" replace />} />
-            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </>
         )}
-
-        {token && (
-          <>
-            <Route path="*" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard/*" element={<Dashboard />} />
-          </>
-        )} */}
       </Routes>
     </>
   );
