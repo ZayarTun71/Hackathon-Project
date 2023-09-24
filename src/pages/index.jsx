@@ -24,7 +24,6 @@ const Dashboard = ({ virsual, children, children_two }) => {
   };
 
   useEffect(() => {
-
     $(window).ready(function () {
       $('a[href^="#"]').click(function (e) {
         e.preventDefault();
@@ -55,7 +54,7 @@ const Dashboard = ({ virsual, children, children_two }) => {
       $(".banner-img img").matchHeight({ byRow: false });
 
       const currentRoute = window.location.pathname;
-      if(currentRoute=="/"){
+      if (currentRoute == "/") {
         $(".product-list__inner").slick({
           dots: false,
           speed: 400,
@@ -85,8 +84,8 @@ const Dashboard = ({ virsual, children, children_two }) => {
           ],
         });
       }
-     
-      $('.review-list').slick({
+
+      $(".review-list").slick({
         dots: true,
         speed: 400,
         autoplay: true,
@@ -95,10 +94,9 @@ const Dashboard = ({ virsual, children, children_two }) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        arrows: false
+        arrows: false,
       });
     });
-    
   }, []);
 
   useEffect(() => {
@@ -207,10 +205,12 @@ const Dashboard = ({ virsual, children, children_two }) => {
     Delighters.init();
   }, []);
 
+  const currentRoute = window.location.pathname;
+
   return (
     <div id="wrap">
       <div className="project-wrap">
-        <Header/>
+        <Header />
         <section className="l-content-area">
           <div className="l-content">{virsual}</div>
           {children && (
@@ -223,7 +223,8 @@ const Dashboard = ({ virsual, children, children_two }) => {
           {children_two && <>{children_two}</>}
         </section>
       </div>
-      <Reveiw/>
+      {currentRoute == "/" && <Reveiw />}
+
       <Footer />
     </div>
   );
