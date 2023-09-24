@@ -100,11 +100,10 @@
           <div class="l-content">
             <section class="l-label">
               <div class="l-label__inner">
-                <h2 class="label-title">Product Name</h2>
+                <h2 class="label-title">Cart</h2>
                 <ul>
                   <li><a href="#" class="label-link">Home</a></li>
-                  <li><a href="#" class="label-link">Product List</a></li>
-                  <li><a href="#" class="label-link active">Product Name</a></li>
+                  <li><a href="#" class="label-link">Cart</a></li>
                 </ul>
               </div>
             </section>
@@ -113,54 +112,81 @@
               <div class="p-bloc__content l-wrap__outer">
                 <div class="l-wrap__inner">
                   
-                  <div class="product-detail">
-                    <div class="product-detail__inner">
-                      <div class="img-box">
-                        <img src="../img/product/product1.png" alt="Product Image">
-                      </div>
-                      <div class="txt-box">
-                        <div class="cat">
-                          <span class="stock">IN STOCK</span>
-                        </div>
-                        <div class="product-info">
-                          <h3 class="title">Product Name</h3>
-                          <span class="price">3,000 MMK</span>
-                          <p class="desc">Dolores sit et vel doloremque illo pariatur ex. Eum necessitatibus repudiandae accusamus et eum placeat. Exercitationem
-                          nostrum vel corrupti nam.</p>
-                        </div>
+                  <div class="cart">
+                    <div class="card__inner">
+                      <div class="item-list">
+                        <div class="item-list__inner">
+                          <table class="item-table">
+                            <tr>
+                              <th colspan="3">PRODUCT</th>
+                              <th>PRICE</th>
+                              <th>QUANTITY</th>
+                              <th>SUBTOTAL</th>
+                            </tr>
+                            <tr>
+                              <td class="del"></td>
+                              <td><img src="../img/product/product1.png" alt="Product"></td>
+                              <td>Product Name</td>
+                              <td>$100</td>
+                              <td>1</td>
+                              <td>$100</td>
+                            </tr>
+                            <tr>
+                              <td class="del"></td>
+                              <td><img src="../img/product/product1.png" alt="Product"></td>
+                              <td>Product Name</td>
+                              <td>$100</td>
+                              <td>1</td>
+                              <td>$100</td>
+                            </tr>
+                            <tr>
+                              <td class="del"></td>
+                              <td><img src="../img/product/product1.png" alt="Product"></td>
+                              <td>Product Name</td>
+                              <td>$100</td>
+                              <td>1</td>
+                              <td>$100</td>
+                            </tr>
+                          </table>
 
-                        <div class="product-add">
-                          <div class="product-add__inner">
-                            <div class="product-qty">
-                              <input type="number" min="1" max="9" step="1" value="1">
+                          <div class="coupon">
+                            <input type="text" class="coupon-code" placeholder="Enter Coupon Code">
+                            <div class="c-btn c-btn--coupon">
+                              <a href="#" class="card-link">Apply Coupon</a>
                             </div>
-                          
-                            <div class="c-btn c-btn--cart"><a href="/items-detail" class="card-link">Add To Cart</a></div>
                           </div>
-                        </div>
-                        
-                      </div>
-                    </div>
 
-                    <div class="additional-info">
-                      <div class="additional-info__inner">
-                        <h3 class="title">Additional Information</h3>
-                        <table>
+                        </div>
+                      </div>
+                      <div class="amt">
+                        <table class="amt-table">
                           <tr>
-                            <td>Weight</td>
-                            <td>Dimensions</td>
+                            <th>CART TOTALS</th>
                           </tr>
                           <tr>
-                            <td>77 kg</td>
-                            <td>55 × 78 × 124 cm</td>
+                            <td>Subtotal</td>
+                            <td>$300</td>
+                          </tr>
+                          <tr>
+                            <td>Discount</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Total</td>
+                            <td class="total">$300</td>
                           </tr>
                         </table>
+                      
+                        <div class="c-btn c-btn--checkout">
+                          <a href="#" class="card-link">Checkout</a>
+                        </div>
+
                       </div>
                     </div>
 
                     <div class="recommend">
                       <div class="recommend__inner">
-                        <h3 class="title">Related products</h3>
+                        <h3 class="title">You may be interested in</h3>
                         <div class="product-list">
                           <div class="product-list__inner">
                             <div class="product-bloc">

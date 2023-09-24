@@ -12,7 +12,9 @@
 		}
 	}	
 
-	&--cart {
+	&--cart,
+	&--checkout,
+	&--coupon {
 		background-color: #a8b324;
 		text-align: center;
 		width: 180px;
@@ -35,6 +37,15 @@
 				pointer-events: none;
 			}
 		}
+	}
+
+	&--checkout {
+		width: 100%;
+		max-width: 350px;
+	}
+
+	&--coupon {
+		margin-left: 26px;
 	}
 
 	&--item-list {
@@ -60,7 +71,9 @@
 			}
 		}
 
-		&--cart {
+		&--cart,
+		&--checkout,
+		&--coupon {
 			width: 100%;
 		}
 	}
@@ -70,7 +83,9 @@
 	.p-bloc {
 		&--item-detail {
 			.c-btn {
-				&--cart {
+				&--cart,
+				&--checkout,
+				&--coupon {
 					max-width: 300px;
 					margin: 0;
 
@@ -85,7 +100,9 @@
 
 @media screen and (max-width: 400px) {
 	.c-bnt {
-		&--cart {
+		&--cart,
+		&--checkout,
+		&--coupon {
 			padding: 5px;
 		}
 	}
