@@ -108,7 +108,7 @@
               </div>
             </section>
 
-            <section class="p-bloc p-bloc--item-detail">
+            <section class="p-bloc">
               <div class="p-bloc__content l-wrap__outer">
                 <div class="l-wrap__inner">
                   
@@ -116,7 +116,7 @@
                     <div class="card__inner">
                       <div class="item-list">
                         <div class="item-list__inner">
-                          <table class="item-table">
+                          <table class="item-table pc">
                             <tr>
                               <th colspan="3">PRODUCT</th>
                               <th>PRICE</th>
@@ -145,6 +145,30 @@
                               <td>Product Name</td>
                               <td>$100</td>
                               <td>1</td>
+                              <td>$100</td>
+                            </tr>
+                          </table>
+
+                          <table class="item-table sp">
+                            <tr>
+                              <th rowspan="5"><img src="../img/product/product1.png" alt="Product"></th>
+                              <td>Product Name</td>
+                              <td class="del"></td>
+                            </tr>
+                            <tr>
+                              <td>Price</td>
+                              <td>$100</td>
+                            </tr>
+                            <tr>
+                              <td>QUANTITY</td>
+                              <td>$100</td>
+                            </tr>
+                            <tr>
+                              <td>Price</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td>SUBTOTAL</td>
                               <td>$100</td>
                             </tr>
                           </table>
@@ -299,10 +323,6 @@
         else {
           $('.header').removeClass('scr');
         }
-
-        $(window).animate({
-          scrollTop: target.offset().top - headerHeight
-        }, 800, 'swing');
       });
 
       jQuery('<div class="product-qty-nav"><div class="product-qty-button product-qty-up">+</div><div class="product-qty-button product-qty-down">-</div></div>').insertAfter('.product-qty input');
