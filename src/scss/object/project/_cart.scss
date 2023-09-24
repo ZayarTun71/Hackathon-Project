@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.card {
+.cart {
 	&__inner {
 		display: flex;
 		justify-content: space-between;
@@ -109,7 +109,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-	.card {
+	.cart {
 		&__inner {
 			.amt {
 				width: 33%;
@@ -128,7 +128,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-	.card {
+	.cart {
 		&__inner {
 			flex-direction: column;
 
@@ -152,7 +152,7 @@
 }
 
 @media screen and (max-width: 800px) {
-	.card {
+	.cart {
 		&__inner {
 			.item-list {
 				.item-table {
@@ -192,8 +192,8 @@
 	}
 }
 
-/* card-payment */
-.card {
+/* cart-payment */
+.cart {
 	&__inner {
 		.bill-info {
 			width: 35%;

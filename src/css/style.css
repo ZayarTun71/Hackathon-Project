@@ -1057,40 +1057,40 @@ body.and #wrap {
     right: 0;
   }
 }
-.card__inner {
+.cart__inner {
   display: flex;
   justify-content: space-between;
   padding: 60px 0;
 }
-.card__inner .item-list {
+.cart__inner .item-list {
   width: 55%;
 }
-.card__inner .item-list .item-table {
+.cart__inner .item-list .item-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 60px;
 }
-.card__inner .item-list .item-table tr {
+.cart__inner .item-list .item-table tr {
   text-align: center;
   color: #0a472e;
   border-bottom: 1px solid #ebebeb;
 }
-.card__inner .item-list .item-table tr th {
+.cart__inner .item-list .item-table tr th {
   font-size: 14px;
   font-weight: 400;
   padding-bottom: 20px;
 }
-.card__inner .item-list .item-table tr td {
+.cart__inner .item-list .item-table tr td {
   font-size: 16px;
 }
-.card__inner .item-list .item-table tr td img {
+.cart__inner .item-list .item-table tr td img {
   max-width: 90px;
 }
-.card__inner .item-list .item-table tr td.del {
+.cart__inner .item-list .item-table tr td.del {
   position: relative;
   width: 5%;
 }
-.card__inner .item-list .item-table tr td.del:before {
+.cart__inner .item-list .item-table tr td.del:before {
   content: "";
   position: absolute;
   background: url("../img/common/icon_delete.png");
@@ -1101,130 +1101,130 @@ body.and #wrap {
   left: 0;
   top: 35%;
 }
-.card__inner .item-list .item-table.sp {
+.cart__inner .item-list .item-table.sp {
   display: none;
 }
-.card__inner .item-list .coupon {
+.cart__inner .item-list .coupon {
   display: flex;
 }
-.card__inner .item-list .coupon input[type=text] {
+.cart__inner .item-list .coupon input[type=text] {
   text-indent: 10px;
 }
-.card__inner .amt {
+.cart__inner .amt {
   width: 30%;
   border: 6px solid #ebebeb;
   padding: 20px;
 }
-.card__inner .amt .amt-table {
+.cart__inner .amt .amt-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 30px;
 }
-.card__inner .amt .amt-table tr {
+.cart__inner .amt .amt-table tr {
   color: #0a472e;
   border-bottom: 1px solid #ebebeb;
 }
-.card__inner .amt .amt-table tr:last-child {
+.cart__inner .amt .amt-table tr:last-child {
   border-bottom: 0;
 }
-.card__inner .amt .amt-table tr th,
-.card__inner .amt .amt-table tr td {
+.cart__inner .amt .amt-table tr th,
+.cart__inner .amt .amt-table tr td {
   padding: 20px;
 }
-.card__inner .amt .amt-table tr th {
+.cart__inner .amt .amt-table tr th {
   font-size: 24px;
   font-weight: 600;
 }
-.card__inner .amt .amt-table tr td {
+.cart__inner .amt .amt-table tr td {
   font-size: 20px;
   font-weight: 700;
 }
-.card__inner .amt .amt-table tr td.total {
+.cart__inner .amt .amt-table tr td.total {
   font-size: 24px;
   color: #80891b;
 }
 
 @media screen and (max-width: 1200px) {
-  .card__inner .amt {
+  .cart__inner .amt {
     width: 33%;
   }
-  .card__inner .amt .amt-table tr th,
-  .card__inner .amt .amt-table tr td {
+  .cart__inner .amt .amt-table tr th,
+  .cart__inner .amt .amt-table tr td {
     padding: 15px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .card__inner {
+  .cart__inner {
     flex-direction: column;
   }
-  .card__inner .item-list {
+  .cart__inner .item-list {
     width: 100%;
     margin-bottom: 40px;
   }
-  .card__inner .item-list .coupon input[type=text] {
+  .cart__inner .item-list .coupon input[type=text] {
     margin-right: 15px;
   }
-  .card__inner .amt {
+  .cart__inner .amt {
     width: 100%;
     padding: 0 0 20px;
   }
 }
 @media screen and (max-width: 800px) {
-  .card__inner .item-list .item-table.pc {
+  .cart__inner .item-list .item-table.pc {
     display: none;
   }
-  .card__inner .item-list .item-table.sp {
+  .cart__inner .item-list .item-table.sp {
     display: block;
   }
-  .card__inner .item-list .item-table tr th img {
+  .cart__inner .item-list .item-table tr th img {
     max-width: 60px;
   }
-  .card__inner .item-list .item-table tr td {
+  .cart__inner .item-list .item-table tr td {
     text-align: left;
   }
-  .card__inner .item-list .item-table tr td.del:before {
+  .cart__inner .item-list .item-table tr td.del:before {
     top: 20%;
   }
-  .card__inner .item-list .item-table tr th,
-  .card__inner .item-list .item-table tr td {
+  .cart__inner .item-list .item-table tr th,
+  .cart__inner .item-list .item-table tr td {
     padding: 10px;
   }
 }
-/* card-payment */
-.card__inner .bill-info {
+/* cart-payment */
+.cart__inner .bill-info {
   width: 35%;
 }
-.card__inner .bill-info .title {
+.cart__inner .bill-info .title {
   text-align: left;
   padding-bottom: 30px;
 }
-.card__inner .bill-info__inner form ul {
+.cart__inner .bill-info__inner form ul {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
 }
-.card__inner .bill-info__inner form ul li {
+.cart__inner .bill-info__inner form ul li {
   padding-bottom: 30px;
 }
-.card__inner .bill-info__inner form ul li:last-child {
+.cart__inner .bill-info__inner form ul li:last-child {
   padding-bottom: 0;
 }
-.card__inner .bill-info__inner form ul li label {
+.cart__inner .bill-info__inner form ul li label {
   font-size: 18px;
   line-height: 1.2;
   font-weight: 500;
 }
-.card__inner .bill-info__inner form ul li label.required {
+.cart__inner .bill-info__inner form ul li label.required {
   display: relative;
 }
-.card__inner .bill-info__inner form ul li label.required:after {
+.cart__inner .bill-info__inner form ul li label.required:after {
   content: "*";
   position: absolute;
   width: 20px;
   color: red;
   padding-left: 3px;
 }
-.card__inner .bill-info__inner form ul li input[type=text] {
+.cart__inner .bill-info__inner form ul li input[type=text] {
   display: block;
   width: 100%;
   height: 35px;
@@ -1232,51 +1232,51 @@ body.and #wrap {
   text-indent: 15px;
   text-shadow: 0 0 0 #000 !important;
 }
-.card__inner .bill-info__inner form ul li input[type=text]:hover {
+.cart__inner .bill-info__inner form ul li input[type=text]:hover {
   border: 2px solid #80891b;
 }
-.card__inner .bill-info__inner form ul li input[type=text]:focus-visible {
+.cart__inner .bill-info__inner form ul li input[type=text]:focus-visible {
   outline: none;
 }
-.card__inner .bill-info__inner .payment {
+.cart__inner .bill-info__inner .payment {
   padding-bottom: 30px;
 }
-.card__inner .bill-info__inner .payment p {
+.cart__inner .bill-info__inner .payment p {
   font-size: 20px;
   padding-bottom: 20px;
 }
-.card__inner .bill-info__inner .payment__inner {
+.cart__inner .bill-info__inner .payment__inner {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 30px;
 }
-.card__inner .bill-info__inner .payment__inner .payment-btn {
+.cart__inner .bill-info__inner .payment__inner .payment-btn {
   display: inline-flex;
   justify-content: center;
 }
-.card__inner .bill-info__inner .payment__inner .payment-btn label {
+.cart__inner .bill-info__inner .payment__inner .payment-btn label {
   position: relative;
   font-size: 18px;
   margin-left: 5px;
 }
-.card__inner .bill-info__inner .payment__inner .payment-btn label:before {
+.cart__inner .bill-info__inner .payment__inner .payment-btn label:before {
   content: "";
   position: absolute;
   width: 60px;
   height: 60px;
 }
-.card__inner .bill-info__inner .payment__inner .payment-btn label.kpay:before {
+.cart__inner .bill-info__inner .payment__inner .payment-btn label.kpay:before {
   background: url("../img/common/kpay.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.card__inner .bill-info__inner .payment__inner .payment-btn label.wave:before {
+.cart__inner .bill-info__inner .payment__inner .payment-btn label.wave:before {
   background: url("../img/common/wave.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.card__inner .amt {
+.cart__inner .amt {
   width: 45%;
 }
 
