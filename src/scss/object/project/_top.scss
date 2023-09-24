@@ -27,12 +27,12 @@
 							vertical-align: middle;
 						}
 
-						ul {
+						.slide-txt {
 							position: absolute;
 							top: 30%;
 							left: 20%;
 
-							li {
+							dt {
 								padding-bottom: 20px;
 
 								&:first-child {
@@ -84,8 +84,8 @@
 				&__area {
 					&--mainvisual {
 						.slide-bg {
-							ul {
-								li {
+							.slide-txt {
+								dt {
 									&:first-child {
 										font-size: 50px;
 										line-height: 1.2;
@@ -113,10 +113,10 @@
 				&__area {
 					&--mainvisual {
 						.slide-bg {
-							ul {
+							.slide-txt {
 								left: 18%;
 
-								li {
+								dt {
 									&:first-child {
 										font-size: 34px;
 									}
@@ -151,7 +151,7 @@
 				&__area {
 					&--mainvisual {
 						.slide-bg {
-							ul {
+							.slide-txt {
 								left: 18%;
 
 								li {
