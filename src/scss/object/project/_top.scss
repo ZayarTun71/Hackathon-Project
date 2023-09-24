@@ -27,13 +27,14 @@
 							vertical-align: middle;
 						}
 
-						.slide-txt {
+						ul {
 							position: absolute;
 							top: 30%;
 							left: 20%;
 
-							dt {
+							li {
 								padding-bottom: 20px;
+								transform: all 4s ease-in-out;
 
 								&:first-child {
 									font-size: 60px;
@@ -45,12 +46,12 @@
 								&:nth-of-type(2) {
 									font-size: 20px;
 									color: #fff;
-									transition-delay: .8s;
+									transition-delay: 1s;
 								}
 
 								&:last-child {
 									padding-bottom: 0;
-									transition-delay: .5s;
+									transition-delay: 2s;
 								}
 							}
 						}
@@ -84,8 +85,8 @@
 				&__area {
 					&--mainvisual {
 						.slide-bg {
-							.slide-txt {
-								dt {
+							ul {
+								li {
 									&:first-child {
 										font-size: 50px;
 										line-height: 1.2;
@@ -113,10 +114,10 @@
 				&__area {
 					&--mainvisual {
 						.slide-bg {
-							.slide-txt {
+							ul {
 								left: 18%;
 
-								dt {
+								li {
 									&:first-child {
 										font-size: 34px;
 									}
@@ -151,7 +152,7 @@
 				&__area {
 					&--mainvisual {
 						.slide-bg {
-							.slide-txt {
+							ul {
 								left: 18%;
 
 								li {
@@ -234,8 +235,131 @@
 			padding-right: 15px;
 			padding-bottom: 15px;
 
+			img {
+				max-height: 300px;
+			}
+
 			&:nth-of-type(3n + 3) {
 				padding-right: 0;
+			}
+		}
+	}
+
+	&--02 {
+		margin: 0 -80px 40px;
+
+		.banner {
+			&__inner {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: center;
+				flex-wrap: nowrap;
+
+				.banner-img {
+					width: 50%;
+					padding: 0;
+
+					img {
+						width: 100%;
+						min-height: 100%;
+						object-fit: cover;
+					}
+				}
+
+				.banner-txt {
+					width: 50%;
+					background-color: #E8F7F6;
+
+					&__inner {
+						display: flex;
+						flex-direction: column;
+						padding: 60px 30px;
+						width: 80%;
+						margin: 0 auto;
+						
+						span {
+							color: #80891b;
+						}
+
+						h2 {
+							font-size: 46px;
+							padding-bottom: 15px;
+							color: #0a472e;
+						}
+
+						p {
+							font-size: 18px;
+							color: #0a472e;
+						}
+
+						.info-list {
+							display: flex;
+							flex-wrap: wrap;
+							align-items: flex-start;
+							
+							li {
+								width: calc(100% / 2 - 50px);
+								padding: 30px 10px 30px 35px;
+								color: #0a472e;
+								position: relative;
+
+								&:nth-of-type(2n + 2) {
+									padding: 30px 10px 0 35px;
+								}
+
+								&:before {
+									content: '';
+									position: absolute;
+									background-color: none;
+								}
+
+								&.list1 {
+									&:before {
+										background: url('../img/banner/icon1.png');
+										background-size: 100% 100%;
+										background-repeat: no-repeat;
+										width: 26px;
+										height: 26px;
+										left: 0;
+									}
+								}
+
+								&.list2 {
+									&:before {
+										background: url('../img/banner/icon5.png');
+										background-size: 100% 100%;
+										background-repeat: no-repeat;
+										width: 26px;
+										height: 26px;
+										left: 0;
+									}
+								}
+
+								&.list3 {
+									&:before {
+										background: url('../img/banner/icon2.png');
+										background-size: 100% 100%;
+										background-repeat: no-repeat;
+										width: 26px;
+										height: 26px;
+										left: 0;
+									}
+								}
+
+								&.list4 {
+									&:before {
+										background: url('../img/banner/icon4.png');
+										background-size: 100% 100%;
+										background-repeat: no-repeat;
+										width: 26px;
+										height: 26px;
+										left: 0;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -244,6 +368,81 @@
 @media screen and (max-width: 1024px) {
 	.banner {
 		margin-bottom: 40px;
+
+		&__inner {
+			.banner-img {
+				img {
+					max-height: 260px;
+				}
+			}
+		}
+
+		&--02 {
+			margin: 0 -60px 40px;
+
+			.banner {
+				&__inner {
+					h2 {
+						font-size: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	.banner {
+		margin-bottom: 40px;
+
+		&__inner {
+			.banner-img {
+				img {
+					max-height: 180px;
+				}
+			}
+		}
+
+		&--02 {
+			margin: 0 -40px 30px;
+
+			.banner {
+				&__inner {
+					flex-direction: column;
+
+					h2 {
+						font-size: 36px;
+						padding-bottom: 10px;
+					}
+
+					p {
+						font-size: 16px;
+					}
+
+					.banner-img {
+						width: 100%;
+					}
+
+					.banner-txt {
+						width: 100%;
+
+						&__inner {
+							.info-list {
+								li {
+									width: calc(50% - 40px);
+									padding: 25px 5px 25px 30px;
+
+									&:nth-of-type(2n + 2) {
+										padding: 25px 5px 0 30px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -260,20 +459,28 @@
 				&:nth-of-type(3n + 3) {
 					padding-right: 15px;
 				}
+
+				img {
+					max-height: 140px;
+				}
 			}
+		}
+
+		&--02 {
+			margin: 0 -20px 30px;
 		}
 	}
 }
 
 .is-delighter {
-	transform: translateX(-100%);
+	transform: translateY(50px);
 	transition: none;
 	opacity: 0;
 }
 
 .is-delighter.delighter {
-	transition: transform .8s ease-out, opacity .8s ease-out;
-	transform: translateX(100%);
+	transition: transform .8s ease-in, opacity .8s ease-in;
+	transform: translateY(-50px);
 	opacity: 0;
 	z-index: 1;
 }
@@ -285,4 +492,71 @@
 
 .is-delighter.delighter.ended {
 	z-index: 0;
+}
+
+.slide-right {
+	width: 100%;
+	animation: 4s slide-right;
+}
+
+@keyframes slide-right {
+	from {
+		margin-left: -100%;
+	}
+
+	to {
+		margin-left: 0%;
+	}
+}
+
+.review-bloc {
+	background-image: url('../img/banner/banner_bg3.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 650px;
+
+	.rating-box {
+		background-image: url('../img/banner/banner_bg4.png');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-color: #0a472e;
+		width: 350px;
+
+		&__inner {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 60px 0;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			
+			.rate {
+				font-size: 70px;
+				line-height: 1.3;
+				color: #80891b;
+			}
+
+			.star {
+				width: 64px;
+				height: 40px;
+			}
+
+			.review {
+				color: #fff;
+			}
+		}
+
+		.review-link {
+			color: #80891b;
+			text-decoration: underline;
+
+			&:hover {
+				opacity: .8;
+			}
+		}
+	}
 }
