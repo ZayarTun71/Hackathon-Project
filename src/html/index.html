@@ -50,8 +50,8 @@
                     <li><a href="#" class="sub-link">Sale</a></li>
                   </ul>
                 </li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <li><a href="#" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
               </ul>
               <div class="search">
                 <input type="text" class="search__term" placeholder="What are you looking for?">
@@ -433,13 +433,56 @@
                     <ul>
                       <li class="rate">4.8</li>
                       <li class="star"><img src="../img/common/icon_rating.png" alt="Rating image"></li>
-                      <li class="review">Trustscore on 525 reviews</li>
+                      <li class="review">Trustscore on 365 reviews</li>
                     </ul>
                     <a href="#" class="review-link">See All Reviews >> </a>
                   </div>
                 </div>
-                <div class="review-box">
-                
+                <div class="review-list review-slider">
+                  <div class="review-box">
+                    <div class="review-box__inner">
+                      <ul>
+                        <li class="profile"><img src="../img/common/user1.png" alt="Profile"></li>
+                        <li>Thiha Kyaw</li>
+                      </ul>
+                      <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the
+                        good work!
+                        Garden was worth a fortune to my company."</p>
+                    </div>
+                  </div>
+                  <div class="review-box">
+                    <div class="review-box__inner">
+                      <ul>
+                        <li class="profile"><img src="../img/common/user3.png" alt="Profile"></li>
+                        <li>Zayar Tun</li>
+                      </ul>
+                      <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the
+                        good work!
+                        Garden was worth a fortune to my company."</p>
+                    </div>
+                  </div>
+                  <div class="review-box">
+                    <div class="review-box__inner">
+                      <ul>
+                        <li class="profile"><img src="../img/common/user2.png" alt="Profile"></li>
+                        <li>Thet Htoo Htoo San</li>
+                      </ul>
+                      <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the
+                        good work!
+                        Garden was worth a fortune to my company."</p>
+                    </div>
+                  </div>
+                  <div class="review-box">
+                    <div class="review-box__inner">
+                      <ul>
+                        <li class="profile"><img src="../img/common/user4.png" alt="Profile"></li>
+                        <li>Kyawt Kyawt San</li>
+                      </ul>
+                      <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the
+                        good work!
+                        Garden was worth a fortune to my company."</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -450,6 +493,53 @@
 
 
       <footer class="footer">
+        <div class="footer-contact">
+          <div class="footer-contact__inner">
+            <ul>
+              <li class="deli">Free Shipping <span>On Selected Items</span></li>
+              <li class="call">Give Us A Call <span>(+95)88-66-991</span></li>
+              <li class="mail">Email Us <span>(+95)88-66-991</span></li>
+              <li class="commu">Community<span>Shop with purpose</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-banner l-wrap__outer">
+          <div class="footer-banner__inner l-wrap__inner">
+            <div class="menu-list" id="about">
+              <h4 class="title">ABOUT COMPANY</h4>
+              <p>Delicious, organic food and drink with less packaging, less food waste and lower food miles. What more do you need?</p>
+
+              <a href=""></a>
+            </div>
+            <div class="menu-list">
+              <h4 class="title">INFORMATION</h4>
+              <ul>
+                <li><a href="#" target="_self">HOME</a></li>
+                <li><a href="#" target="_self">SHOP</a></li>
+                <li><a href="#" target="_self">ABOUT</a></li>
+                <li><a href="#" target="_self">CONTACT</a></li>
+              </ul>
+            </div>
+            <div class="menu-list">
+              <h4 class="title">CATEGORIES</h4>
+              <ul>
+                <li><a href="#" target="_self">FRUITS & VEGETABLES</a></li>
+                <li><a href="#" target="_self">DAILY PRODUCTS</a></li>
+                <li><a href="#" target="_self">PACKAGE FOODS</a></li>
+                <li><a href="#" target="_self">HEALTH & WELLNESS</a></li>
+              </ul>
+            </div>
+            <div class="menu-list">
+              <h4 class="title">MY ACCOUNT</h4>
+              <ul>
+                <li><a href="#" target="_self">MY ACCOUNT</a></li>
+                <li><a href="#" target="_self">SHIPPING</a></li>
+                <li><a href="#" target="_self">ORDER STATUS</a></li>
+                <li><a href="#" target="_self">SHOPPING CART</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <address>Copyright © 2023 Team 2 All Rights Reserved</address>
       </footer>
 
@@ -462,8 +552,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
     <script type="text/javascript">
-      $('a[href^="#"]').click(function (e) {
+     $("a[href^='#']").click(function (e) {
         e.preventDefault();
+
+        var position = $($(this).attr("href")).offset().top;
+
+        $("body, html").animate({
+          scrollTop: position
+        }, 800);
       });
 
       $(window).scroll(function () {
@@ -517,6 +613,19 @@
           }
         ]
       });
+
+      $('.review-list').slick({
+        dots: true,
+        speed: 400,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        pauseOnHover: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false
+      });
+
     </script>
 
   </body>
