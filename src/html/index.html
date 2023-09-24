@@ -154,7 +154,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="recommend" is-delighter" data-delighter">
+                  <div class="recommend">
                     <div class="recommend__inner">
                       <h3 class="title"><a href="">Snack</a></h3>
                       <div class="product-list">
@@ -426,10 +426,6 @@
         else {
           $('.header').removeClass('scr');
         }
-
-        $(window).animate({
-          scrollTop: target.offset().top - headerHeight
-        }, 800, 'swing');
       });
 
       $('.p-slider__area--mainvisual').slick({

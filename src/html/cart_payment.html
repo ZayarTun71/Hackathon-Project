@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Eats</title>
+    <meta name="keywords" content=" ">
+    <meta name="description" content=" ">
+    <meta property="og:image" content="../img/meta/ogp_image.png">
+
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#cccccc">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <script src=""></script>
+
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="application-name" content="">
+    <meta name="msapplication-TileColor" content="#78c7ff">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="project-wrap">
+
+        <header class="header">
+          <div class="header__inner">
+            <div class="logo">
+              <a href="/" class="logo-link"></a>
+            </div>
+            <div class="nav-menu">
+              <ul class="nav-menu__list">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li class="sub">
+                  <a href="#" class="nav-link h-c">Shop</a>
+                  <ul class="menu-pulldown">
+                    <li><a href="#" class="sub-link">Snacks</a></li>
+                    <li><a href="#" class="sub-link">Lunch Box</a></li>
+                    <li><a href="#" class="sub-link">Sale</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+              </ul>
+              <div class="search">
+                <input type="text" class="search__term" placeholder="What are you looking for?">
+                <button type="submit" class="search__btn"></button>
+              </div>
+        
+              <div class="cart">
+                <a href="#" class="cart-icon">
+                  <span class='counter'>0</span></a>
+              </div>
+        
+              <!-- Before Login Show-->
+              <div class="nav-menu__icon">
+                <input type="checkbox" id="nav-drp">
+                <label for="nav-drp" class="nav-drp-label">
+                  <img src="../img/header/icon_user.png" alt="">
+                </label>
+        
+                <ul class="drp-menu">
+                  <li><a href="#" class="drp-link">Register</a></li>
+                  <li><a href="#" class="drp-link">Login</a></li>
+                </ul>
+              </div>
+              <!-- Before Login Show-->
+            </div>
+        
+            <div id="nav">
+              <input type="checkbox" />
+              <span></span><span></span><span></span>
+              <ul id="menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Shop</a>
+                  <ul class="spmenu-pulldown">
+                    <li><a href="#" class="sub-link">・Snacks</a></li>
+                    <li><a href="#" class="sub-link">・Lunch Box</a></li>
+                    <li><a href="#" class="sub-link">・Sale</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="nav-link">About Us</a></li>
+                <li><a href="#" class="nav-link">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <section class="l-content-area">
+          <div class="l-content">
+            <section class="l-label">
+              <div class="l-label__inner">
+                <h2 class="label-title">Cart</h2>
+                <ul>
+                  <li><a href="#" class="label-link">Home</a></li>
+                  <li><a href="#" class="label-link">Cart</a></li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="p-bloc">
+              <div class="p-bloc__content l-wrap__outer">
+                <div class="l-wrap__inner">
+                  
+                  <div class="cart">
+                    <div class="card__inner">
+                     <div class="bill-info">
+                      <div class="bill-info__inner">
+                        <h3 class="title">Bill Information</h3>
+                        <form action="/" method="get" class="form">
+                          <ul>
+                            <li>
+                              <label for="fname" class="required">Full Name</label>
+                              <input type="text" id="fname" name="fname">
+                            </li>
+                            <li>
+                              <label for="fname" class="required">Address</label>
+                              <input type="text" id="fname" name="fname">
+                            </li>
+                            <li>
+                              <label for="fname" class="required">Phone</span></label>
+                              <input type="text" id="fname" name="fname">
+                            </li>
+                          </ul>
+                          <div class="payment">
+                            <p> Choose Payment Method: </p>
+                            <div class="payment__inner">
+                              <div class="payment-btn">
+                                <input type="radio" id="kpay" name="payment">
+                                <label for="kpay" class="kpay"></label>
+                              </div>
+                              <div class="payment-btn">
+                                <input type="radio" id="wave" name="payment">
+                                <label for="wave" class="wave"></label>
+                              </div>
+                              <div class="payment-btn">
+                                <input type="radio" id="cod" name="payment">
+                                <label for="cod" class="cod">Cash On Deli</label>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="c-btn">
+                            <p class="btn"><input type="submit" value="Payment" onclick=""></p>
+                          </div>
+                        </form>
+                      </div>
+                     </div>
+                      <div class="amt">
+                        <table class="amt-table">
+                          <tr>
+                            <th>Your Order</th>
+                          </tr>
+                          <tr>
+                            <td>Product</td>
+                            <td>Subtotal</td>
+                          </tr>
+                          <tr>
+                            <td>Product Name x 1</td>
+                            <td>$300</td>
+                          </tr>
+                          <tr>
+                            <td>Product Name x 3</td>
+                            <td>$300</td>
+                          </tr>
+                          <tr>
+                            <td>Product Name x 5</td>
+                            <td>$300</td>
+                          </tr>
+                          <tr>
+                            <td>Product Name x 5</td>
+                            <td>$300</td>
+                          </tr>
+                          <tr>
+                            <td>Product Name x 5</td>
+                            <td>$300</td>
+                          </tr>
+                          <tr>
+                            <td>Product Name x 5</td>
+                            <td>$300</td>
+                          </tr>
+                          <tr>
+                            <td>Discount</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Total</td>
+                            <td class="total">$300</td>
+                          </tr>
+                        </table>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+          </div>
+        </section>
+
+      </div><!-- project-wrap -->
+
+
+      <footer class="footer">
+        <address>Copyright © 2023 Team 2 All Rights Reserved</address>
+      </footer>
+
+    </div>
+
+    <!-- js -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $('a[href^="#"]').click(function (e) {
+        e.preventDefault();
+      });
+
+      $(window).scroll(function () {
+        const headerHeight = $('.header').outerHeight();
+        if ($(window).scrollTop() >= headerHeight) {
+          $('.header').addClass('scr');
+        }
+        else {
+          $('.header').removeClass('scr');
+        }
+      });
+
+    </script>
+
+  </body>
+</html>

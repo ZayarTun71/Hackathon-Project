@@ -295,10 +295,6 @@
         else {
           $('.header').removeClass('scr');
         }
-
-        $(window).animate({
-          scrollTop: target.offset().top - headerHeight
-        }, 800, 'swing');
       });
 
       jQuery('<div class="product-qty-nav"><div class="product-qty-button product-qty-up">+</div><div class="product-qty-button product-qty-down">-</div></div>').insertAfter('.product-qty input');

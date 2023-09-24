@@ -108,7 +108,7 @@
               </div>
             </section>
 
-            <section class="p-bloc p-bloc--item-detail">
+            <section class="p-bloc">
               <div class="p-bloc__content l-wrap__outer">
                 <div class="l-wrap__inner">
                   
@@ -323,10 +323,6 @@
         else {
           $('.header').removeClass('scr');
         }
-
-        $(window).animate({
-          scrollTop: target.offset().top - headerHeight
-        }, 800, 'swing');
       });
 
       jQuery('<div class="product-qty-nav"><div class="product-qty-button product-qty-up">+</div><div class="product-qty-button product-qty-down">-</div></div>').insertAfter('.product-qty input');
