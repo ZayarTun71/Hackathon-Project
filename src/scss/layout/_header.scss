@@ -473,6 +473,11 @@ $greenLight: #80891b;
 				.logo-link {
 					width: 40px;
 					height: 40px;
+
+					&--02 {
+						width: 100px;
+						height: 38px;
+					}
 				}
 			}
 
@@ -492,6 +497,11 @@ $greenLight: #80891b;
 						.logo-link {
 							width: 40px;
 							height: 40px;
+
+							&--02 {
+								width: 128px;
+								height: 38px;
+							}
 						}
 					}
 				}
