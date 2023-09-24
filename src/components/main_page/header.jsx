@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const token = Cookies.get("token");
+  const [amount , setAmount]=useState(0);
+
+  const cartList = Cookies.get("cartList")
+    ? JSON.parse(Cookies.get("cartList"))
+    : 0;
+
+  const handleCart = () => {
+    if (amount > 0) {
+      navigate("/main/cart");
+    }
+  };
+
+  useEffect(() => {
+   setAmount(cartList.length)
+  }, [cartList]);
+
   return (
     <header className="header header--top">
       <div className="header__inner">
@@ -56,30 +76,31 @@ const Header = () => {
             <button type="submit" className="search__btn"></button>
           </div>
           <div className="cart">
-            <a href="#" className="cart-icon">
-              <span className="counter">0</span>
+            <a className="cart-icon" onClick={handleCart}>
+              <span className="counter">{amount == undefined ? 0 : amount}</span>
             </a>
           </div>
-          {/* Before Login Show */}
+
           <div className="nav-menu__icon">
             <input type="checkbox" id="nav-drp" />
             <label htmlFor="nav-drp" className="nav-drp-label">
               <img src="../img/header/icon_user.png" alt="" />
             </label>
-            <ul className="drp-menu">
-              <li>
-                <a href="#" className="drp-link">
-                  Register
-                </a>
-              </li>
-              <li>
-                <a href="#" className="drp-link">
-                  Login
-                </a>
-              </li>
-            </ul>
+            {!token && (
+              <ul className="drp-menu">
+                <li>
+                  <a href="#" className="drp-link">
+                    Register
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="drp-link">
+                    Login
+                  </a>
+                </li>
+              </ul>
+            )}
           </div>
-          {/* Before Login Show */}
         </div>
         <div id="nav">
           <input type="checkbox" />

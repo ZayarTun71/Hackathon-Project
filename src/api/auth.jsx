@@ -42,6 +42,8 @@ export function registerRequest({
   email,
   password,
   password_confirmation,
+  phone,
+  address
 }) {
   const url = `${baseUrl}/api/auth/register`;
   return new Promise((resolve, reject) => {
@@ -51,6 +53,8 @@ export function registerRequest({
         email,
         password,
         password_confirmation,
+        phone,
+        address
       })
       .then(function (response) {
         resolve(response.data);

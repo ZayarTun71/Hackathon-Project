@@ -8,6 +8,7 @@ import { ProductDetail } from "../pages/main_page/productDetail";
 import MainPage from "../pages/main_page/mainPage";
 import Login from "../pages/auth/login";
 import Register from "../pages/auth/register";
+import Cart from "../pages/main_page/cart";
 
 export const AppRoutes = () => {
   const token = Cookies.get("token");
@@ -20,6 +21,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<MainPage/>} />
         <Route path="/main/product-list" element={<ProductList/>} />
         <Route path="/main/product-detail" element={<ProductDetail/>} />
+        <Route path="/main/cart" element={<Cart/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
        

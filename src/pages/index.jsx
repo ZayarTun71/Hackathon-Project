@@ -9,7 +9,7 @@ import $ from "jquery";
 import "slick-carousel/slick/slick.min.js";
 import "jquery-match-height/dist/jquery.matchHeight-min.js";
 
-const Dashboard = ({ virsual, children }) => {
+const Dashboard = ({ virsual, children, children_two }) => {
   const navigate = useNavigate();
 
   const token = Cookies.get("token");
@@ -189,7 +189,6 @@ const Dashboard = ({ virsual, children }) => {
 
     // Initialize Delighters when the component mounts
     Delighters.init();
-
   }, []);
 
   return (
@@ -197,16 +196,15 @@ const Dashboard = ({ virsual, children }) => {
       <div className="project-wrap">
         <Header />
         <section className="l-content-area">
-          <div className="l-content">
-            {virsual}
-            </div>
-          <section className="p-bloc">
-            <div className="p-bloc__content l-wrap__outer">
-              <div className="l-wrap__inner">
-                {children}
-                </div>
-            </div>
-          </section>
+          <div className="l-content">{virsual}</div>
+          {children && (
+            <section className="p-bloc">
+              <div className="p-bloc__content l-wrap__outer">
+                <div className="l-wrap__inner">{children}</div>
+              </div>
+            </section>
+          )}
+          {children_two && <>{children_two}</>}
         </section>
       </div>
       <Footer />

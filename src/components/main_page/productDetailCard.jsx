@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
-import $ from "jquery";
-import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
-const ProductDetailCard = ({ name, price, description, stock, image }) => {
-  
+const ProductDetailCard = ({
+  item_id,
+  name,
+  price,
+  description,
+  stock,
+  image,
+  category,
+}) => {
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
-  const [subscriptionType, setSubscriptionType] = useState(1);
+  const [subscriptionType, setSubscriptionType] = useState(0);
 
   const handleQuantityChange = (event) => {
     const quantity = parseInt(event.target.value, 10);
@@ -17,38 +25,50 @@ const ProductDetailCard = ({ name, price, description, stock, image }) => {
     setSubscriptionType(subscription);
   };
 
-  // const mydata=[
-  //   {
-  //     user_id:1,
-  //     type:null||7,
-  //     item_id:2,
-  //     status:0,
+  const token = Cookies.get("token");
+  const user_id = Cookies.get("id");
+  const currentRoute = window.location.pathname + window.location.search;
 
-  //     user_sub_id:1,//backend
-  //     quantity:10,
-  //     buy_date:"Date"
-  //   },
-  //   {
-  //     user_id:1,
-  //     type:null||7,
-  //     item_id:2,
-  //     status:0,
+  // const cartList = Cookies.get("cartList")
+  // ? JSON.parse(Cookies.get("cartList"))
+  // : 0;
 
-  //     user_sub_id:1,//backend
-  //     quantity:10,
-  //     buy_date:"Date"
-  //   },
-  //   {
-  //     user_id:1,
-  //     type:null||7,
-  //     item_id:2,
-  //     status:0,
+  // const currentURL = window.location.href;
 
-  //     user_sub_id:1,//backend
-  //     quantity:10,
-  //     buy_date:"Date"
+  const handleCart = (e) => {
+    e.preventDefault();
+    if (!token) {
+      Cookies.set("route", currentRoute);
+      navigate("/login");
+    } else {
+
+      const existingCart = Cookies.get("cartList") ? JSON.parse(Cookies.get("cartList")) : [];
+
+      const newItem = {
+        user_id: user_id,
+        item_id: item_id,
+        item_name: name,
+        item_price: price,
+        quantity: quantity,
+        type: subscriptionType === 0 ? null : subscriptionType,
+        image:image
+      };
+      const updatedCart = [...existingCart, newItem];
+
+      Cookies.set("cartList", JSON.stringify(updatedCart));
+      window.location.reload();
+    }
+  };
+
+  //  if (cartList !== undefined) {
+  //     // Get the current URL
+     
+    
+  //     // Append the cartList query parameter
+  //     const updatedURL = currentURL + (currentURL.includes("?") ? "&" : "?") + "cartList=" + cartList.length;
+    
+  //     window.history.replaceState({}, "", updatedURL);
   //   }
-  // ]
 
   return (
     <>
@@ -69,52 +89,56 @@ const ProductDetailCard = ({ name, price, description, stock, image }) => {
           </div>
 
           <div className="product-add">
-            <p className="subsc-title">Choose Subscription</p>
-            <div className="product-add__inner">
-              <div className="subsc-btn">
-                <input
-                  type="radio"
-                  id="0"
-                  name="subscription"
-                  value={1}
-                  onChange={handleSubscriptionChange}
-                />
-                <label htmlFor="0">1 Day</label>
-              </div>
+            {stock == 1 && category == "lunch box" && (
+              <>
+                <p className="subsc-title">Choose Subscription</p>
+                <div className="product-add__inner">
+                  <div className="subsc-btn">
+                    <input
+                      type="radio"
+                      id="0"
+                      name="subscription"
+                      value={1}
+                      onChange={handleSubscriptionChange}
+                    />
+                    <label htmlFor="0">1 Day</label>
+                  </div>
 
-              <div className="subsc-btn">
-                <input
-                  type="radio"
-                  id="1"
-                  name="subscription"
-                  value={7}
-                  onChange={handleSubscriptionChange}
-                />
-                <label htmlFor="1">7 Days</label>
-              </div>
+                  <div className="subsc-btn">
+                    <input
+                      type="radio"
+                      id="1"
+                      name="subscription"
+                      value={7}
+                      onChange={handleSubscriptionChange}
+                    />
+                    <label htmlFor="1">7 Days</label>
+                  </div>
 
-              <div className="subsc-btn">
-                <input
-                  type="radio"
-                  id="2"
-                  name="subscription"
-                  value={10}
-                  onChange={handleSubscriptionChange}
-                />
-                <label htmlFor="2">10 Days</label>
-              </div>
+                  <div className="subsc-btn">
+                    <input
+                      type="radio"
+                      id="2"
+                      name="subscription"
+                      value={10}
+                      onChange={handleSubscriptionChange}
+                    />
+                    <label htmlFor="2">10 Days</label>
+                  </div>
 
-              <div className="subsc-btn">
-                <input
-                  type="radio"
-                  id="3"
-                  name="subscription"
-                  value={30}
-                  onChange={handleSubscriptionChange}
-                />
-                <label htmlFor="3">30 Days</label>
-              </div>
-            </div>
+                  <div className="subsc-btn">
+                    <input
+                      type="radio"
+                      id="3"
+                      name="subscription"
+                      value={30}
+                      onChange={handleSubscriptionChange}
+                    />
+                    <label htmlFor="3">30 Days</label>
+                  </div>
+                </div>
+              </>
+            )}
 
             <div className="product-add__inner">
               {stock == 1 && (
@@ -134,9 +158,9 @@ const ProductDetailCard = ({ name, price, description, stock, image }) => {
                   stock == 1 ? "c-btn c-btn--cart" : "c-btn c-btn--cart disable"
                 }
               >
-                <Link to="/login" className="card-link">
-                  Add To Cart
-                </Link>
+                <a href="" className="card-link" onClick={handleCart}>
+                  {stock == 1 ? "ADD TO CART" : "OUT OF STOCK"}
+                </a>
               </div>
             </div>
           </div>

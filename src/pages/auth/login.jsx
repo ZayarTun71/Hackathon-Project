@@ -13,8 +13,6 @@ const Login = () => {
   const location = useLocation();
   const { email } = location.state || {};
 
-  const [token, role] = [Cookies.get("token"), Cookies.get("role")];
-
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -71,6 +69,8 @@ const Login = () => {
     }
   }, [googleLoginData]);
 
+  const route = Cookies.get("route");
+
   const handleLogin = (e) => {
     e.preventDefault();
     loginRequest({
@@ -81,23 +81,22 @@ const Login = () => {
         console.log(res)
         notify("login successfully", "success");
         if (res?.code == 200) {
-          // Cookies.set("id", res.data.id, { expires: 1 });
-          // Cookies.set("token", res.data.token, { expires: 1 });
-          // Cookies.set("email", res.data.email, { expires: 1 });
-          // Cookies.set("name", res.data.name, { expires: 1 });
-          // Cookies.set("role", res.data.role, { expires: 1 });
+          Cookies.set("id", res.data.id, { expires: 1 });
+          Cookies.set("token", res.data.token, { expires: 1 });
+          Cookies.set("email", res.data.email, { expires: 1 });
+          Cookies.set("name", res.data.name, { expires: 1 });
+          Cookies.set("role", res.data.role, { expires: 1 });
           
-          // navigate("/dashboard");
+          navigate(route);
           // window.location.reload();
         }
       })
       .catch((err) => {
-        console.log(err);
-        // if (err.response.data?.code == 401) {
-        //   notify(err.response.data.message, "error");
-        // } else {
-        //   notify("login failed", "error");
-        // }
+        if (err.response.data?.code == 401) {
+          notify(err.response.data.message, "error");
+        } else {
+          notify("login failed", "error");
+        }
       });
   };
 

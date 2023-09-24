@@ -24,11 +24,13 @@ const Register = () => {
       email: registerData.email,
       password: registerData.password,
       password_confirmation: registerData.confirm_password,
+      phone:registerData.phone,
+      address:registerData.address
     })
       .then((res) => {
         console.log(res);
         if (res.code === 201) {
-          navigate("/", { state: { email: res.data.email } });
+          navigate("/login", { state: { email: res.data.email } });
           notify("Register successfully", "success");
         }
       })
