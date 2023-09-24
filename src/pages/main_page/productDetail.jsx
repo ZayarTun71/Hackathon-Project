@@ -19,6 +19,7 @@ export const ProductDetail = () => {
     image_url: "",
     stock: "",
   });
+  const [relatedItem, setRelatedItem] = useState([]);
 
   const { data, refetch } = useQuery(
     ["item_data"],
@@ -30,7 +31,14 @@ export const ProductDetail = () => {
 
   useEffect(() => {
     if (data?.code === 200) {
-      setItemData(...data.data);
+      setItemData({
+        name: data.data.item.name,
+        description: data.data.item.description,
+        price: data.data.item.price,
+        image_url: data.data.item.image_url,
+        stock: data.data.item.stock,
+      });
+      setRelatedItem(data.data.relatedItems);
     }
   }, [data]);
 
@@ -49,7 +57,7 @@ export const ProductDetail = () => {
                 <div className="l-wrap__inner">
                   <div className="product-detail">
                     <ProductDetailCard
-                      item_id={itemData.id}
+                      item_id={id}
                       name={itemData.name}
                       description={itemData.description}
                       price={itemData.price}
@@ -81,26 +89,15 @@ export const ProductDetail = () => {
                         <h3 className="title">Related products</h3>
                         <div className="product-list">
                           <div className="product-list__inner">
-                            <ProductCard
-                              name="banana"
-                              price="50"
-                              image="/img/product/product1.png"
-                            />
-                            <ProductCard
-                              name="banana"
-                              price="50"
-                              image="/img/product/product1.png"
-                            />
-                            <ProductCard
-                              name="banana"
-                              price="50"
-                              image="/img/product/product1.png"
-                            />
-                            <ProductCard
-                              name="banana"
-                              price="50"
-                              image="/img/product/product1.png"
-                            />
+                            {relatedItem.map((item) => (
+                              <ProductCard
+                                key={item.id}
+                                id={item.id}
+                                name={item.name}
+                                price={item.price}
+                                image={item.image_url}
+                              />
+                            ))}
                           </div>
                         </div>
                       </div>

@@ -29,47 +29,33 @@ const ProductDetailCard = ({
   const user_id = Cookies.get("id");
   const currentRoute = window.location.pathname + window.location.search;
 
-  // const cartList = Cookies.get("cartList")
-  // ? JSON.parse(Cookies.get("cartList"))
-  // : 0;
-
-  // const currentURL = window.location.href;
-
   const handleCart = (e) => {
     e.preventDefault();
     if (!token) {
       Cookies.set("route", currentRoute);
       navigate("/login");
     } else {
+      
+        const existingCart = Cookies.get("cartList")
+          ? JSON.parse(Cookies.get("cartList"))
+          : [];
 
-      const existingCart = Cookies.get("cartList") ? JSON.parse(Cookies.get("cartList")) : [];
+        const newItem = {
+          user_id: parseInt(user_id),
+          item_id: item_id,
+          item_name: name,
+          item_price: price,
+          quantity: quantity,
+          type: subscriptionType === 0 ? null : subscriptionType,
+          image: image,
+        };
+        const updatedCart = [...existingCart, newItem];
 
-      const newItem = {
-        user_id: parseInt(user_id),
-        item_id: item_id,
-        item_name: name,
-        item_price: price,
-        quantity: quantity,
-        type: subscriptionType === 0 ? null : subscriptionType,
-        image:image
-      };
-      const updatedCart = [...existingCart, newItem];
-
-      Cookies.set("cartList", JSON.stringify(updatedCart));
-      window.location.reload();
+        Cookies.set("cartList", JSON.stringify(updatedCart));
+        window.location.reload();
     }
   };
-
-  //  if (cartList !== undefined) {
-  //     // Get the current URL
-     
-    
-  //     // Append the cartList query parameter
-  //     const updatedURL = currentURL + (currentURL.includes("?") ? "&" : "?") + "cartList=" + cartList.length;
-    
-  //     window.history.replaceState({}, "", updatedURL);
-  //   }
-
+  
   return (
     <>
       <div className="product-detail__inner">

@@ -15,10 +15,7 @@ const ProductCard = ({ id, name, price, image }) => {
               <dd>{price}MMK</dd>
             </dl>
             <div className="c-btn c-btn--cart">
-              <Link
-                to={`/main/product-detail?id=${id}`}
-                className="card-link"
-              >
+              <Link to={`/main/product-detail?id=${id}`} className="card-link">
                 Add To Cart
               </Link>
             </div>

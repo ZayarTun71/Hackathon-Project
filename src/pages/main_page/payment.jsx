@@ -36,7 +36,7 @@ const Payment = () => {
       .then((res) => {
         if (res.code) {
           Cookies.remove("cartList");
-          window.location.reload();
+          // window.location.reload();
           notify("payment successfully", "success");
         }
       })
