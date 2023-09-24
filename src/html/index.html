@@ -431,14 +431,50 @@
                     <a href="#" class="review-link">See All Reviews >> </a>
                   </div>
                 </div>
-                <div class="review-box">
-                  <div class="review-box__inner">
-                    <ul>
-                      <li class="profile"><img src="../img/common/user1.png" alt="Profile"></li>
-                      <li>Thiha Kyaw</li>
-                    </ul>
-                    <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the good work!
-                    Garden was worth a fortune to my company."</p>
+                <div class="review-list review-slider">
+                  <div class="review-box">
+                    <div class="review-box__inner">
+                      <ul>
+                        <li class="profile"><img src="../img/common/user1.png" alt="Profile"></li>
+                        <li>Thiha Kyaw</li>
+                      </ul>
+                      <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the
+                        good work!
+                        Garden was worth a fortune to my company."</p>
+                    </div>
+                  </div>
+                  <div class="review-box">
+                    <div class="review-box__inner">
+                      <ul>
+                        <li class="profile"><img src="../img/common/user3.png" alt="Profile"></li>
+                        <li>Zayar Tun</li>
+                      </ul>
+                      <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the
+                        good work!
+                        Garden was worth a fortune to my company."</p>
+                    </div>
+                  </div>
+                  <div class="review-box">
+                    <div class="review-box__inner">
+                      <ul>
+                        <li class="profile"><img src="../img/common/user2.png" alt="Profile"></li>
+                        <li>Thet Htoo Htoo San</li>
+                      </ul>
+                      <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the
+                        good work!
+                        Garden was worth a fortune to my company."</p>
+                    </div>
+                  </div>
+                  <div class="review-box">
+                    <div class="review-box__inner">
+                      <ul>
+                        <li class="profile"><img src="../img/common/user4.png" alt="Profile"></li>
+                        <li>Kyawt Kyawt San</li>
+                      </ul>
+                      <p>"Thanks guys, keep up the good work! Great job, I will definitely be ordering again! Thanks guys, keep up the
+                        good work!
+                        Garden was worth a fortune to my company."</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -487,16 +523,6 @@
         appendDots: $('.p-mainvisual__dots')
       });
 
-      $('.review-box__inner').slick({
-        fade: true,
-        autoplay: true,
-        pauseOnHover: false,
-        autoplaySpeed: 8000,
-        speed: 800,
-        arrows: true,
-        dots: false
-      });
-
       $('.banner-img img').matchHeight({ byRow: false });
 
       $('.product-list__inner').slick({
@@ -527,6 +553,19 @@
           }
         ]
       });
+
+      $('.review-list').slick({
+        dots: true,
+        speed: 400,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        pauseOnHover: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false
+      });
+
     </script>
 
   </body>

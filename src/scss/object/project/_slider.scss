@@ -134,7 +134,8 @@
 $slideDot: 4px;
 
 .p-slider,
-.product-slider {
+.product-slider,
+.review-slider {
 	.slick-dots {
 		display: block;
 		width: 100%;
@@ -182,6 +183,32 @@ $slideDot: 4px;
 
 		li.slick-active button:before {
 			background-color: #000;
+		}
+	}
+}
+
+.review-slider {
+	.slick-dots {
+		text-align: left;
+
+		li {
+			width: 10px;
+			height: 10px;
+			border-radius: 100%;
+
+			button {
+				width: 10px;
+				height: 10px;
+			}
+
+			button:before {
+				width: 10px;
+				height: 10px;
+			}
+		}
+
+		li.slick-active button:before {
+			background-color: #0a472e;
 		}
 	}
 }

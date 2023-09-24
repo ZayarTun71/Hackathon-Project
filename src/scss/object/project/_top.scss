@@ -568,31 +568,76 @@
 			}
 		}
 
-		.review-box {
+		.review-list {
 			width: 65%;
 
-			&__inner {
-				ul {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					margin-bottom: 30px;
-
-					li {
-						font-size: 24px;
-						color: #fff;
-
-						&.profile {
-							width: 60px;
-							padding-right: 15px;
+			.review-box {
+				width: 100%;
+				padding-bottom: 20px;
+		
+				&__inner {
+					ul {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						margin-bottom: 30px;
+		
+						li {
+							font-size: 24px;
+							color: #fff;
+		
+							&.profile {
+								width: 60px;
+								padding-right: 15px;
+							}
 						}
 					}
+		
+					p {
+						max-width: 500px;
+						color: #fff;
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.review-bloc {
+		&__inner {
+			flex-direction: column;
+
+			.rating-box {
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.review-bloc {
+		height: auto;
+		background-size: cover;
+
+		&__inner {
+			flex-direction: column;
+			padding: 40px 0;
+
+			.rating-box {
+				width: 100%;
+				margin-bottom: 30px;
+
+				&__inner {
+					padding: 40px 0;
 				}
 
-				p {
-					max-width: 500px;
-					color: #fff;
-					font-size: 20px;
+				ul {
+					.rate {
+						font-size: 40px;
+					}
 				}
 			}
 		}
