@@ -45,7 +45,7 @@ const ProductDetailCard = ({
       const existingCart = Cookies.get("cartList") ? JSON.parse(Cookies.get("cartList")) : [];
 
       const newItem = {
-        user_id: user_id,
+        user_id: parseInt(user_id),
         item_id: item_id,
         item_name: name,
         item_price: price,

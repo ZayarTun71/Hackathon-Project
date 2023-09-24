@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
-const Header = () => {
+const Header = (top) => {
   const navigate = useNavigate();
   const token = Cookies.get("token");
   const [amount , setAmount]=useState(0);
@@ -21,8 +21,10 @@ const Header = () => {
    setAmount(cartList.length)
   }, [cartList]);
 
+  const currentRoute = window.location.pathname;
+
   return (
-    <header className="header header--top">
+    <header className={`header ${currentRoute=="/"?"header--top":"header"}`}>
       <div className="header__inner">
         <div className="logo">
           <a href="/" className="logo-link"></a>

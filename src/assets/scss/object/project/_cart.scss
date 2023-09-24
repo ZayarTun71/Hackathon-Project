@@ -50,6 +50,10 @@
 						}
 					}
 				}
+
+				&.sp {
+					display: none;
+				}
 			}
 
 			.coupon {
@@ -101,5 +105,210 @@
 				}
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.card {
+		&__inner {
+			.amt {
+				width: 33%;
+
+				.amt-table {
+					tr {
+						th,
+						td {
+							padding: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.card {
+		&__inner {
+			flex-direction: column;
+
+			.item-list {
+				width: 100%;
+				margin-bottom: 40px;
+
+				.coupon {
+					input[type="text"] {
+						margin-right: 15px;
+					}
+				}
+			}
+
+			.amt {
+				width: 100%;
+				padding: 0 0 20px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.card {
+		&__inner {
+			.item-list {
+				.item-table {
+					&.pc {
+						display: none;
+					}
+
+					&.sp {
+						display: block;
+					}
+
+					tr {
+						th {
+							img {
+								max-width: 60px;
+							}
+						}
+
+						td {
+							text-align: left;
+
+							&.del {
+								&:before {
+									top: 20%;
+								}
+							}
+						}
+
+						th,
+						td {
+							padding: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* card-payment */
+.bill-info {
+	width: 45%;
+
+	.title {
+		text-align: left;
+		padding-bottom: 30px;
+	}
+
+	&__inner {
+		form {
+			ul {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 30px;
+
+				li {
+					padding-bottom: 30px;
+
+					&:last-child {
+						padding-bottom: 0;
+					}
+
+					label {
+						font-size: 18px;
+						line-height: 1.2;
+						font-weight: 500;
+
+						&.required {
+							display: relative;
+					
+							&:after {
+								content: '*';
+								position: absolute;
+								width: 20px;
+								color: red;
+								padding-left: 3px;
+							}
+						}
+					}
+
+					input[type="text"] {
+						display: block;
+						width: 100%;
+						height: 35px;
+						margin: 10px 0 0;
+						text-indent: 15px;
+						text-shadow: 0 0 0 #000 !important;
+
+						&:hover {
+							border: 2px solid #80891b;
+							;
+						}
+
+						&:focus-visible {
+							outline: none;
+						}
+					}
+				}
+			}
+		}
+
+		.payment {
+			padding-bottom: 30px;
+
+			p {
+				font-size: 20px;
+				padding-bottom: 20px;
+			}
+
+			&__inner {
+				display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					margin-bottom: 30px;
+
+				.payment-btn {
+					display: inline-flex;
+					justify-content: center;
+
+					label {
+						position: relative;
+						font-size: 18px;
+						margin-left: 5px;
+			
+						&:before {
+							content: '';
+							position: absolute;
+							width: 36px;
+							height: 36px;
+						}
+			
+						&.kpay {
+							&:before {
+								background: url('../img/common/kpay.png');
+								background-size: 100% 100%;
+								background-repeat: no-repeat;
+							}
+						}
+			
+						&.wave {
+							&:before {
+								background: url('../img/common/wave.png');
+								background-size: 100% 100%;
+								background-repeat: no-repeat;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.bill-info {
+		width: 100%;
+		margin-bottom: 30px;
 	}
 }

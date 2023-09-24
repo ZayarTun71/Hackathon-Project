@@ -194,7 +194,7 @@ const Dashboard = ({ virsual, children, children_two }) => {
   return (
     <div id="wrap">
       <div className="project-wrap">
-        <Header />
+        <Header/>
         <section className="l-content-area">
           <div className="l-content">{virsual}</div>
           {children && (

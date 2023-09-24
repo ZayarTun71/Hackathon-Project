@@ -20,6 +20,10 @@ $greenLight: #80891b;
 		padding: 0 30px;
 
 		.logo {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
 			.logo-link {
 				display: block;
 				background: url('../img/header/logo.png');
@@ -27,10 +31,20 @@ $greenLight: #80891b;
 				background-repeat: no-repeat;
 				width: 50px;
 				height: 50px;
+				margin-left: 10px;
 
 				&:hover {
 					opacity: .8;
 					transition: all .3s ease-in-out;
+				}
+
+				&--02 {
+					display: block;
+					background: url('../img/header/logo_b.png');
+					background-size: 100% 100%;
+					background-repeat: no-repeat;
+					width: 128px;
+					height: 38px;
 				}
 			}
 		}
@@ -327,6 +341,16 @@ $greenLight: #80891b;
 						background: url('../img/header/logo_g.png');
 						background-size: 100% 100%;
 						background-repeat: no-repeat;
+
+						&--02 {
+							display: block;
+							background: url('../img/header/logo_b.png');
+							background-size: 100% 100%;
+							background-repeat: no-repeat;
+							width: 128px;
+							height: 38px;
+							margin-left: 0;
+						}
 					}
 				}
 
@@ -378,12 +402,25 @@ $greenLight: #80891b;
 		.header {
 			&__inner {
 				.logo {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+
 					.logo-link {
 						background: url('../img/header/logo.png');
 						background-size: 100% 100%;
 						background-repeat: no-repeat;
 						width: 50px;
 						height: 50px;
+
+						&--02 {
+							display: block;
+							background: url('../img/header/logo_bw.png');
+							background-size: 100% 100%;
+							background-repeat: no-repeat;
+							width: 128px;
+							height: 38px;
+						}
 					}
 				}
 

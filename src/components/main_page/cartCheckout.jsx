@@ -1,5 +1,6 @@
 import React from "react";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 export const CartCheckout = () => {
   const cartList = Cookies.get("cartList")
@@ -33,9 +34,9 @@ export const CartCheckout = () => {
       </table>
 
       <div className="c-btn c-btn--checkout">
-        <a href="#" className="card-link">
+        <Link to="/main/cart/payment" className="card-link">
           Checkout
-        </a>
+        </Link>
       </div>
     </div>
   );
