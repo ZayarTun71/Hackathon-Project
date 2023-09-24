@@ -72,9 +72,12 @@
 		}
 
 		&--cart,
-		&--checkout,
-		&--coupon {
+		&--checkout {
 			width: 100%;
+		}
+
+		&--checkout {
+			max-width: 300px;
 		}
 	}
 }
@@ -84,7 +87,6 @@
 		&--item-detail {
 			.c-btn {
 				&--cart,
-				&--checkout,
 				&--coupon {
 					max-width: 300px;
 					margin: 0;
@@ -96,10 +98,17 @@
 			}
 		}
 	}
+
+	.c-btn {
+		&--checkout {
+			max-width: 150px;
+			margin: 0 auto;
+		}
+	}
 }
 
 @media screen and (max-width: 400px) {
-	.c-bnt {
+	.c-btn {
 		&--cart,
 		&--checkout,
 		&--coupon {

@@ -356,6 +356,12 @@
 
 			.txt-box {
 				width: 100%;
+
+				.product-add {
+					&__inner {
+						justify-content: flex-start;
+					}
+				}
 			}
 		}
 

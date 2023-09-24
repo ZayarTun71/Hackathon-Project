@@ -50,6 +50,10 @@
 						}
 					}
 				}
+
+				&.sp {
+					display: none;
+				}
 			}
 
 			.coupon {
@@ -96,6 +100,90 @@
 						&.total {
 							font-size: 24px;
 							color: #80891b;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.card {
+		&__inner {
+			.amt {
+				width: 33%;
+
+				.amt-table {
+					tr {
+						th,
+						td {
+							padding: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.card {
+		&__inner {
+			flex-direction: column;
+
+			.item-list {
+				width: 100%;
+				margin-bottom: 40px;
+
+				.coupon {
+					input[type="text"] {
+						margin-right: 15px;
+					}
+				}
+			}
+
+			.amt {
+				width: 100%;
+				padding: 0 0 20px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.card {
+		&__inner {
+			.item-list {
+				.item-table {
+					&.pc {
+						display: none;
+					}
+
+					&.sp {
+						display: block;
+					}
+
+					tr {
+						th {
+							img {
+								max-width: 60px;
+							}
+						}
+
+						td {
+							text-align: left;
+
+							&.del {
+								&:before {
+									top: 20%;
+								}
+							}
+						}
+
+						th,
+						td {
+							padding: 10px;
 						}
 					}
 				}
