@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Cookies from "js-cookie";
 
 const CartTable = () => {
-  const cartList = Cookies.get("cartList")
+  const initialCartList = Cookies.get("cartList")
     ? JSON.parse(Cookies.get("cartList"))
     : [];
 
-    console.log(cartList);
+  const [cartList, setCartList] = useState(initialCartList);
+
+  const handleDelete = (id) => {
+    const updatedCartList = cartList.filter((item) => item.item_id !== id);
+    setCartList(updatedCartList);
+    Cookies.set("cartList", JSON.stringify(updatedCartList));
+    window.location.reload();
+  };
   return (
     <table className="item-table">
       <thead>
@@ -18,9 +25,9 @@ const CartTable = () => {
         </tr>
       </thead>
       <tbody>
-      {cartList.map((item) => (
+        {cartList.map((item) => (
           <tr key={item.item_id}>
-            <td className="del"></td>
+            <td className="del" onClick={() => handleDelete(item.item_id)}></td>
             <td>
               <img src={item.image} alt="Product" />
             </td>
