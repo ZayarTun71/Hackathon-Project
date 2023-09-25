@@ -52,7 +52,6 @@ const Cart = () => {
                     <h3 className="title">You may be interested in</h3>
                     <div className="product-list">
                       <div className="product-list__inner">
-                        
                         <div className="product-bloc">
                           <div className="product-bloc__inner">
                             <div className="img-box">
@@ -107,15 +106,15 @@ const Cart = () => {
                           <div className="product-bloc__inner">
                             <div className="img-box">
                               <img
-                                src="../img/product/product2.png"
+                                src="/img/lunchbox/lunchbox1.png"
                                 alt="Product Image"
                               />
                             </div>
                             <div className="txt-box">
                               <div className="txt-box__inner">
-                                <p className="product-title">Product Name</p>
+                                <p className="product-title">Egg Set</p>
                                 <dl>
-                                  <dd>$ 300</dd>
+                                  <dd>4000 MMK</dd>
                                 </dl>
                                 <div className="c-btn c-btn--cart">
                                   <a href="/items-detail" className="card-link">
@@ -130,15 +129,15 @@ const Cart = () => {
                           <div className="product-bloc__inner">
                             <div className="img-box">
                               <img
-                                src="../img/product/product2.png"
+                                src="/img/lunchbox/lunchbox2.png"
                                 alt="Product Image"
                               />
                             </div>
                             <div className="txt-box">
                               <div className="txt-box__inner">
-                                <p className="product-title">Product Name</p>
+                                <p className="product-title">Rice Set</p>
                                 <dl>
-                                  <dd>$ 300</dd>
+                                  <dd>4000 MMK</dd>
                                 </dl>
                                 <div className="c-btn c-btn--cart">
                                   <a href="/items-detail" className="card-link">

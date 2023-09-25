@@ -24,7 +24,7 @@ const ProductDetailCard = ({
     const subscription = parseInt(event.target.value, 10);
     setSubscriptionType(subscription);
   };
-
+  
   const token = Cookies.get("token");
   const user_id = Cookies.get("id");
   const currentRoute = window.location.pathname + window.location.search;

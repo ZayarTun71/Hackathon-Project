@@ -3,7 +3,7 @@ import Dashboard from "..";
 import ProductCard from "../../components/main_page/productCard";
 import { GetItemRequest } from "../../api/product";
 import { useQuery } from "react-query";
-import {Content} from "../../components/main_page/content";
+import { Content } from "../../components/main_page/content";
 
 const ProductList = () => {
   const [itemList, setItemList] = useState([]);
@@ -64,52 +64,20 @@ const ProductList = () => {
               ))}
             </div>
 
-            {/* <div className="item__paging">
-                    <ul className="paging">
-                      <li className="prev">
-                        <a href="#" className="paging-link">
-                          <img
-                            src="../img/common/paging_arrow_left.png"
-                            alt="＜"
-                          />
-                        </a>
-                      </li>
-                      <li>
-                        <span>1</span>
-                      </li>
-                      <li>
-                        <a href="#" className="paging-link">
-                          2
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="paging-link">
-                          3
-                        </a>
-                      </li>
-                      <li className="next">
-                        <a href="#" className="paging-link">
-                          <img
-                            src="../img/common/paging_arrow_right.png"
-                            alt="＞"
-                          />
-                        </a>
-                      </li>
-                    </ul>
-                  </div> */}
-
             <div className="item__paging">
               <ul className="paging">
-                <li className="prev">
-                  {/* Implement previous page navigation */}
-                  <a
-                    href="#"
-                    className="paging-link"
-                    onClick={() => handlePageChange(currentPage - 1)}
-                  >
-                    <img src="../img/common/paging_arrow_left.png" alt="＜" />
-                  </a>
-                </li>
+                {currentPage > 1 && (
+                  <li className="prev">
+                   
+                    <a
+                      href="#"
+                      className="paging-link"
+                      onClick={() => handlePageChange(currentPage - 1)}
+                    >
+                      <img src="../img/common/paging_arrow_left.png" alt="＜" />
+                    </a>
+                  </li>
+                )}
                 {Array.from({ length: totalPages }).map((_, index) => (
                   <li key={index}>
                     <a
@@ -123,16 +91,21 @@ const ProductList = () => {
                     </a>
                   </li>
                 ))}
-                <li className="next">
-                  {/* Implement next page navigation */}
-                  <a
-                    href="#"
-                    className="paging-link"
-                    onClick={() => handlePageChange(currentPage + 1)}
-                  >
-                    <img src="../img/common/paging_arrow_right.png" alt="＞" />
-                  </a>
-                </li>
+                {totalPages > currentPage && (
+                  <li className="next">
+                    
+                    <a
+                      href="#"
+                      className="paging-link"
+                      onClick={() => handlePageChange(currentPage + 1)}
+                    >
+                      <img
+                        src="../img/common/paging_arrow_right.png"
+                        alt="＞"
+                      />
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

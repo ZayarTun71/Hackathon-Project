@@ -37,6 +37,7 @@ export const ProductDetail = () => {
         price: data.data.item.price,
         image_url: data.data.item.image_url,
         stock: data.data.item.stock,
+        category:data.data.item.category
       });
       setRelatedItem(data.data.relatedItems);
     }
