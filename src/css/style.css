@@ -861,6 +861,12 @@ body.and #wrap {
   width: 100%;
   max-width: 350px;
 }
+.c-btn--cart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .c-btn--coupon {
   margin-left: 26px;
 }
