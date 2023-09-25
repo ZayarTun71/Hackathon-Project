@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const LunchBox = () => {
   return (
@@ -13,7 +14,7 @@ const LunchBox = () => {
               <div className="product-bloc" key={index}>
                 <div className="product-bloc__inner">
                   <div className="img-box">
-                    <img src="../img/product/product2.png" alt="Product Image" />
+                    <img src="img/himg/hotdog.jpg" alt="Product Image" />
                   </div>
                   <div className="txt-box">
                     <div className="txt-box__inner">
@@ -32,9 +33,9 @@ const LunchBox = () => {
               </div>
             ))}
           </div>
-          <a href="#" className="show-all">
+          <Link to="/main/product-list" href="#" className="show-all">
             Show All &gt;&gt;
-          </a>
+          </Link>
         </div>
       </div>
     </div>

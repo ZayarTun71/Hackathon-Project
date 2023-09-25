@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GetSnackRequest } from "../../api/product";
 import { useQuery } from "react-query";
 import ProductCard from "./productCard";
+import { Link } from "react-router-dom";
 
 export const Snack = () => {
   const [snackList, setSnackList] = useState([]);
@@ -33,18 +34,16 @@ export const Snack = () => {
                 image={item.image_url}
               />
             ))} */}
-
-
             <div className="product-bloc">
               <div className="product-bloc__inner">
                 <div className="img-box">
-                  <img src="../img/product/product2.png" alt="Product Image" />
+                  <img src="img/himg/product1.png" alt="Product Image" />
                 </div>
                 <div className="txt-box">
                   <div className="txt-box__inner">
-                    <p className="product-title">Product Name</p>
+                    <p className="product-title">Cauliflower Cracker</p>
                     <dl>
-                      <dd>$ 300</dd>
+                      <dd>5000 MMK</dd>
                     </dl>
                     <div className="c-btn c-btn--cart">
                       <a href="/items-detail" className="card-link">
@@ -58,13 +57,13 @@ export const Snack = () => {
             <div className="product-bloc">
               <div className="product-bloc__inner">
                 <div className="img-box">
-                  <img src="../img/product/product2.png" alt="Product Image" />
+                  <img src="img/himg/product2.png" alt="Product Image" />
                 </div>
                 <div className="txt-box">
                   <div className="txt-box__inner">
-                    <p className="product-title">Product Name</p>
+                    <p className="product-title">Peanut</p>
                     <dl>
-                      <dd>$ 300</dd>
+                      <dd>3000 MMK</dd>
                     </dl>
                     <div className="c-btn c-btn--cart">
                       <a href="/items-detail" className="card-link">
@@ -78,13 +77,13 @@ export const Snack = () => {
             <div className="product-bloc">
               <div className="product-bloc__inner">
                 <div className="img-box">
-                  <img src="../img/product/product2.png" alt="Product Image" />
+                  <img src="img/himg/product3.png" alt="Product Image" />
                 </div>
                 <div className="txt-box">
                   <div className="txt-box__inner">
-                    <p className="product-title">Product Name</p>
+                    <p className="product-title">Sweet Potato Chips</p>
                     <dl>
-                      <dd>$ 300</dd>
+                      <dd>4000 MMK</dd>
                     </dl>
                     <div className="c-btn c-btn--cart">
                       <a href="/items-detail" className="card-link">
@@ -98,13 +97,13 @@ export const Snack = () => {
             <div className="product-bloc">
               <div className="product-bloc__inner">
                 <div className="img-box">
-                  <img src="../img/product/product2.png" alt="Product Image" />
+                  <img src="img/himg/product4.png" alt="Product Image" />
                 </div>
                 <div className="txt-box">
                   <div className="txt-box__inner">
-                    <p className="product-title">Product Name</p>
+                    <p className="product-title">Terra</p>
                     <dl>
-                      <dd>$ 300</dd>
+                      <dd>10000 MMK</dd>
                     </dl>
                     <div className="c-btn c-btn--cart">
                       <a href="/items-detail" className="card-link">
@@ -118,13 +117,13 @@ export const Snack = () => {
             <div className="product-bloc">
               <div className="product-bloc__inner">
                 <div className="img-box">
-                  <img src="../img/product/product2.png" alt="Product Image" />
+                  <img src="img/himg/product5.png" alt="Product Image" />
                 </div>
                 <div className="txt-box">
                   <div className="txt-box__inner">
-                    <p className="product-title">Product Name</p>
+                    <p className="product-title">Hippaes</p>
                     <dl>
-                      <dd>$ 300</dd>
+                      <dd>7000 MMK</dd>
                     </dl>
                     <div className="c-btn c-btn--cart">
                       <a href="/items-detail" className="card-link">
@@ -138,9 +137,9 @@ export const Snack = () => {
 
           </div>
 
-          <a href="#" className="show-all">
+          <Link to="/main/product-list" href="#" className="show-all">
             Show All &gt;&gt;
-          </a>
+          </Link>
         </div>
       </div>
     </div>
