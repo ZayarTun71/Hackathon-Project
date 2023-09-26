@@ -1,14 +1,22 @@
 import React from "react";
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 export const CartCheckout = () => {
-  const cartList = Cookies.get("cartList")
-    ? JSON.parse(Cookies.get("cartList"))
-    : [];
+  // const cartList = Cookies.get("cartList")
+  //   ? JSON.parse(Cookies.get("cartList"))
+  //   : [];
+
+  // const total = cartList.reduce((acc, item) => {
+  //   return acc + item.item_price * item.quantity;
+  // }, 0);
+
+  const [cookies] = useCookies(["cartList"]);
+  const cartList = cookies.cartList || [];
 
   const total = cartList.reduce((acc, item) => {
-    return acc + item.item_price * item.quantity;
+    return acc + item.item_price * item.quantity * (item.type ? item.type : 1);
   }, 0);
 
   return (
@@ -16,11 +24,11 @@ export const CartCheckout = () => {
       <table className="amt-table">
         <tbody>
           <tr>
-            <th>CART TOTALS</th>
+            <th>CART TOTALS</th> 
           </tr>
           <tr>
             <td>Subtotal</td>
-            <td>{total}MMK</td>
+            <td>{total} MMK</td>
           </tr>
           <tr>
             <td>Discount</td>

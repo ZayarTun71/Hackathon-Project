@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import Dashboard from "..";
-import {Content} from "../../components/main_page/content";
+import { Content, ContentPayment } from "../../components/main_page/content";
 import Cookies from "js-cookie";
+import { useCookies } from "react-cookie";
 import { paymentRequest } from "../../api/payment";
 import { Alert, notify } from "../../components/main_page/alert";
+import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
-  
   const user_id = Cookies.get("id");
-  const cartList = Cookies.get("cartList")
-    ? JSON.parse(Cookies.get("cartList"))
-    : [];
-
+  const navigate=useNavigate();
+  const [cookies, , removeCookie] = useCookies(["cartList"]);
+  const cartList = cookies.cartList || [];
   const total = cartList.reduce((acc, item) => {
-    return acc + item.item_price * item.quantity;
+    return acc + item.item_price * item.quantity * (item.type ? item.type : 1);
   }, 0);
+  // const cartList = Cookies.get("cartList")
+  //   ? JSON.parse(Cookies.get("cartList"))
+  //   : [];
+
+  // const total = cartList.reduce((acc, item) => {
+  //   return acc + item.item_price * item.quantity;
+  // }, 0);
 
   const [billInfo, setBillInfo] = useState({
     full_name: "",
@@ -35,9 +42,14 @@ const Payment = () => {
     })
       .then((res) => {
         if (res.code) {
-          Cookies.remove("cartList");
+          // Cookies.remove("cartList");
           // window.location.reload();
           notify("payment successfully", "success");
+          removeCookie("cartList");
+          setTimeout(() => {
+            navigate("/");
+          }, 5000);
+         
         }
       })
       .catch((err) => {
@@ -57,7 +69,7 @@ const Payment = () => {
         virsual={
           <>
             <Alert />
-            <Content />
+            <ContentPayment />
           </>
         }
         children={
@@ -182,9 +194,16 @@ const Payment = () => {
                     {cartList.map((item) => (
                       <tr key={item.item_id}>
                         <td>
-                          {item.item_name} x {item.quantity}
+                          {item.type
+                            ? `${item.item_name} x ${item.quantity} x ${item.type} Days`
+                            : `${item.item_name} x ${item.quantity}`}
                         </td>
-                        <td>{item.item_price * item.quantity} MMK</td>
+                        <td>
+                          {item.type
+                            ? item.item_price * item.quantity * item.type
+                            : item.item_price * item.quantity}{" "}
+                          MMK
+                        </td>
                       </tr>
                     ))}
 

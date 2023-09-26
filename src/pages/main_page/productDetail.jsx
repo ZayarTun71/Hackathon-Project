@@ -6,6 +6,15 @@ import { GetItemByIdRequest } from "../../api/product";
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 import { ContentDetail } from "../../components/main_page/content";
+import * as Scroll from "react-scroll";
+import {
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 export const ProductDetail = () => {
   const location = useLocation();
@@ -42,6 +51,10 @@ export const ProductDetail = () => {
       setRelatedItem(data.data.relatedItems);
     }
   }, [data]);
+
+  useEffect(()=>{
+    scroll.scrollTo(100);
+  },[])
 
   return (
     <Dashboard

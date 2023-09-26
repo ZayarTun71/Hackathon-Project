@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { clientId } from "./config/socialAuth.jsx";
+import { CookiesProvider } from "react-cookie";
 
 const queryClient = new QueryClient();
 
@@ -12,9 +13,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <GoogleOAuthProvider clientId={clientId}>
-          <App />
-        </GoogleOAuthProvider>
+        <CookiesProvider>
+          <GoogleOAuthProvider clientId={clientId}>
+            <App />
+          </GoogleOAuthProvider>
+        </CookiesProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>

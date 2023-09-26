@@ -10,10 +10,11 @@ import Login from "../pages/auth/login";
 import Register from "../pages/auth/register";
 import Cart from "../pages/main_page/cart";
 import Payment from "../pages/main_page/payment";
+import { useCookies } from "react-cookie";
 
 export const AppRoutes = () => {
-  const token = Cookies.get("token");
 
+  const [cookies] = useCookies(["token"]);
   return (
     <>
       <Routes>
@@ -24,7 +25,7 @@ export const AppRoutes = () => {
         <Route path="/main/product-detail" element={<ProductDetail />} />
         <Route path="/main/cart" element={<Cart />} />
         <Route path="/main/cart-payment" element={<Payment />} />
-        {!token && (
+        {!cookies.token && (
           <>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

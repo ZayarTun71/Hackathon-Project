@@ -4,14 +4,12 @@ import { AppRoutes } from "./routes/appRoutes";
 
 function App() {
 
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === "development") {
     console.log = () => {};
     console.error = () => {};
     console.debug = () => {};
   }
   
-  const token = Cookies.get("token");
-
   return (
     <div>
      <AppRoutes/>

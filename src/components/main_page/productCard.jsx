@@ -12,7 +12,7 @@ const ProductCard = ({ id, name, price, image }) => {
           <div className="txt-box__inner">
             <p className="product-title">{name}</p>
             <dl>
-              <dd>{price}MMK</dd>
+              <dd>{price} MMK</dd>
             </dl>
             <div className="c-btn c-btn--cart">
               <Link to={`/main/product-detail?id=${id}`} className="card-link">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const ProductDetailCard = ({
   item_id,
@@ -13,7 +14,7 @@ const ProductDetailCard = ({
 }) => {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
-  const [subscriptionType, setSubscriptionType] = useState(0);
+  const [subscriptionType, setSubscriptionType] = useState(1);
 
   const handleQuantityChange = (event) => {
     const quantity = parseInt(event.target.value, 10);
@@ -24,22 +25,22 @@ const ProductDetailCard = ({
     const subscription = parseInt(event.target.value, 10);
     setSubscriptionType(subscription);
   };
-  
+
   const token = Cookies.get("token");
   const user_id = Cookies.get("id");
   const currentRoute = window.location.pathname + window.location.search;
 
+  const [cookies, setCookie] = useCookies(["cartList"]);
   const handleCart = (e) => {
     e.preventDefault();
+
     if (!token) {
       Cookies.set("route", currentRoute);
       navigate("/login");
+      window.location.reload();
     } else {
-      
-        const existingCart = Cookies.get("cartList")
-          ? JSON.parse(Cookies.get("cartList"))
-          : [];
-
+      if (quantity > 0) {
+        const existingCart = cookies.cartList || [];
         const newItem = {
           user_id: parseInt(user_id),
           item_id: item_id,
@@ -51,11 +52,29 @@ const ProductDetailCard = ({
         };
         const updatedCart = [...existingCart, newItem];
 
-        Cookies.set("cartList", JSON.stringify(updatedCart));
-        window.location.reload();
+        setCookie("cartList", JSON.stringify(updatedCart));
+      }
+
+      // const existingCart = Cookies.get("cartList")
+      //   ? JSON.parse(Cookies.get("cartList"))
+      //   : [];
+
+      // const newItem = {
+      //   user_id: parseInt(user_id),
+      //   item_id: item_id,
+      //   item_name: name,
+      //   item_price: price,
+      //   quantity: quantity,
+      //   type: subscriptionType === 0 ? null : subscriptionType,
+      //   image: image,
+      // };
+      // const updatedCart = [...existingCart, newItem];
+
+      // Cookies.set("cartList", JSON.stringify(updatedCart));
+      // window.location.reload();
     }
   };
-  
+
   return (
     <>
       <div className="product-detail__inner">
@@ -87,7 +106,7 @@ const ProductDetailCard = ({
                       value={1}
                       onChange={handleSubscriptionChange}
                     />
-                    <label htmlFor="0">1 Day</label>
+                    <label htmlFor="0">One Buy</label>
                   </div>
 
                   <div className="subsc-btn">

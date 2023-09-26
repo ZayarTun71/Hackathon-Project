@@ -37,9 +37,9 @@ export const ContentDetail = ({ name }) => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="label-link">
+                <Link to="/main/product-list" href="#" className="label-link">
                   Product List
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="label-link active">
@@ -63,8 +63,8 @@ export const ContentCart = () => {
             <h2 className="label-title">Cart</h2>
             <ul>
               <li>
-                <Link to="/" href="#" className="label-link">
-                  Home
+                <Link to="/main/product-detail" href="#" className="label-link">
+                  Product-Detail
                 </Link>
               </li>
               <li>
@@ -89,8 +89,8 @@ export const ContentPayment = () => {
             <h2 className="label-title">Payment</h2>
             <ul>
               <li>
-                <Link to="/" href="#" className="label-link">
-                  Home
+                <Link to="/main/cart" href="#" className="label-link">
+                  Cart
                 </Link>
               </li>
               <li>

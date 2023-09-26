@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { useCookies } from "react-cookie";
 import * as Scroll from "react-scroll";
 import {
-  Link,
   Button,
   Element,
   Events,
@@ -17,9 +17,12 @@ const Header = () => {
   const token = Cookies.get("token");
   const [amount, setAmount] = useState(0);
 
-  const cartList = Cookies.get("cartList")
-    ? JSON.parse(Cookies.get("cartList"))
-    : 0;
+  const [cookies] = useCookies(["cartList"]);
+  const cartList = cookies.cartList || [];
+
+  // const cartList = Cookies.get("cartList")
+  //   ? JSON.parse(Cookies.get("cartList"))
+  //   : 0;
 
   const handleCart = () => {
     if (amount > 0) {
@@ -41,10 +44,11 @@ const Header = () => {
   };
 
   const handleLogout = (e) => {
-    ["token", "email", "name", "role", "cartList"].forEach((cookieName) =>
-      Cookies.remove(cookieName)
+    ["token", "email", "id", "name", "role", "cartList", "route"].forEach(
+      (cookieName) => Cookies.remove(cookieName)
     );
     navigate("/");
+    window.location.reload();
   };
 
   return (
@@ -61,14 +65,14 @@ const Header = () => {
         <div className="nav-menu">
           <ul className="nav-menu__list">
             <li>
-              <Link to="" href="#" className="nav-link" onClick={scrollToTop}>
+              <Link to="/" href="#" className="nav-link" onClick={scrollToTop}>
                 Home
               </Link>
             </li>
             <li className="sub">
-              <a href="#" className="nav-link h-c">
+              <Link to="/main/product-list" href="#" className="nav-link h-c">
                 Shop
-              </a>
+              </Link>
               <ul className="menu-pulldown">
                 <li>
                   <Link
@@ -144,14 +148,14 @@ const Header = () => {
               {!token && (
                 <>
                   <li>
-                    <Link to="/login" href="#" className="drp-link">
+                    <Link to="/register" className="drp-link">
                       Register
                     </Link>
                   </li>
                   <li>
-                    <a to="/register" href="#" className="drp-link">
+                    <Link to="/login" href="#" className="drp-link">
                       Login
-                    </a>
+                    </Link>
                   </li>
                 </>
               )}

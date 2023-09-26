@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { useCookies } from "react-cookie";
 
 const CartTable = () => {
-  const initialCartList = Cookies.get("cartList")
-    ? JSON.parse(Cookies.get("cartList"))
-    : [];
+  // const initialCartList = Cookies.get("cartList")
+  //   ? JSON.parse(Cookies.get("cartList"))
+  //   : [];
+
+  const [cookies, setCookie] = useCookies(["cartList"]);
+
+  const initialCartList = cookies.cartList || [];
 
   const [cartList, setCartList] = useState(initialCartList);
 
   const handleDelete = (id) => {
     const updatedCartList = cartList.filter((item) => item.item_id !== id);
     setCartList(updatedCartList);
-    Cookies.set("cartList", JSON.stringify(updatedCartList));
-    window.location.reload();
+    setCookie("cartList", JSON.stringify(updatedCartList));
+
+    // const updatedCartList = cartList.filter((item) => item.item_id !== id);
+    // setCartList(updatedCartList);
+    // Cookies.set("cartList", JSON.stringify(updatedCartList));
+    // window.location.reload();
   };
+
   return (
     <table className="item-table">
       <thead>
@@ -21,6 +31,7 @@ const CartTable = () => {
           <th colSpan="3">PRODUCT</th>
           <th>PRICE</th>
           <th>QUANTITY</th>
+          <th>TYPE</th>
           <th>SUBTOTAL</th>
         </tr>
       </thead>
@@ -34,7 +45,13 @@ const CartTable = () => {
             <td>{item.item_name}</td>
             <td>{item.item_price} MMK</td>
             <td>{item.quantity}</td>
-            <td>{item.item_price * item.quantity} MMK</td>
+            <td>{item.type == 1 ? `One Buy` : `${item.type} Days`}</td>
+            <td>
+              {item.type
+                ? item.item_price * item.quantity * item.type
+                : item.item_price * item.quantity}{" "}
+              MMK
+            </td>
           </tr>
         ))}
       </tbody>
