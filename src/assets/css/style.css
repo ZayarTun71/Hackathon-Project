@@ -1118,7 +1118,7 @@ body.and #wrap {
   text-indent: 10px;
 }
 .cart__inner .amt {
-  width: 36%;
+  width: 35%;
   border: 6px solid #ebebeb;
   padding: 20px;
 }
@@ -1139,6 +1139,7 @@ body.and #wrap {
   padding: 20px;
 }
 .cart__inner .amt .amt-table tr th {
+  width: 100%;
   font-size: 24px;
   font-weight: 600;
 }
