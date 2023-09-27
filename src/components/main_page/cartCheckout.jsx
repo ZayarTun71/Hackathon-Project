@@ -36,7 +36,7 @@ export const CartCheckout = () => {
           </tr>
           <tr>
             <td>Total</td>
-            <td className="total">{total}MMK</td>
+            <td className="total">{total} MMK</td>
           </tr>
         </tbody>
       </table>
