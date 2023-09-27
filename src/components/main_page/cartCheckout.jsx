@@ -24,7 +24,7 @@ export const CartCheckout = () => {
       <table className="amt-table">
         <tbody>
           <tr>
-            <th>CART TOTALS</th> 
+            <th colSpan={2}>CART TOTALS</th>
           </tr>
           <tr>
             <td>Subtotal</td>
